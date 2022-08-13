@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ $sass := resources.Get "style.scss" }}
+{{ $style := $sass | resources.ToCSS }}
+<link data-precache rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
+
+{{ $ts := resources.Get "app.ts" }}
+{{ $script := $ts | js.Build | fingerprint }}
+<script data-precache src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+
+<article>
+{{ .Content }}
+</article>
+
+{{ end }}
