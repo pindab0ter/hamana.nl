@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+{{ $sass := resources.Get "style.scss" }}
+{{ $style := $sass | resources.ToCSS | resources.PostCSS }}
+{{ if .Site.IsServer }}
+    <link data-precache rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
+{{ else }}
+    {{ $style := $style | minify | fingerprint | resources.PostProcess }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{ end }}
+
+{{ $ts := resources.Get "app.ts" }}
+{{ $script := $ts | js.Build | fingerprint }}
+<script data-precache src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
