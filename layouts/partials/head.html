@@ -5,10 +5,13 @@
 {{ $sass := resources.Get "style.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.PostCSS }}
 {{ if .Site.IsServer }}
-    <link data-precache rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
+    {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
+    {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+    {{ $style := $style | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) $random }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 {{ else }}
     {{ $style := $style | minify | fingerprint | resources.PostProcess }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+    <link data-precache rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
 {{ end }}
 
 {{ $ts := resources.Get "app.ts" }}
