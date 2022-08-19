@@ -1,3 +1,18 @@
 <header>
-    <div class="flex justify-center py-1">Dit is de header</div>
+    <div class="flex justify-between py-1">
+        <div class="flex items-center">
+            <img src="logo.png" alt="Hamana Cattery" class="w-48" />
+            <div class="flex-column">
+                <p class="text-3xl font-thin">Cattery Hamana</p>
+                <p class="text-l text-justify">Welkom bij huize Hamana</p>
+            </div>
+        </div>
+
+        <nav class="flex items-center">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+            <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+    </div>
 </header>

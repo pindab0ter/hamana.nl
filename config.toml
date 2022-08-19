@@ -1,4 +1,15 @@
 baseURL = 'https://hamana.nl/'
 languageCode = 'nl-nl'
 title = 'Hamana Cattery'
-DefaultContentLanguage = 'nl'
+defaultContentLanguage = 'nl'
+
+[menu]
+[[menu.main]]
+  identifier = 'home'
+  name = 'Home'
+  url = '/'
+
+[[menu.main]]
+  identifier = 'niews'
+  name = 'Nieuws'
+  url = '/nieuws'
