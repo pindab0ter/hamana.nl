@@ -1,0 +1,13 @@
++++
+title = "Echografisch Onderzoek"
+date = 2022-06-23
+[[resources]]
+name = "photo"
+title = "Yuki en Ginny liggen op bed"
+src = "yuki-en-ginny-op-bed.jpg"
++++
+
+Vandaag zijn beide dames op HCM, PKD en CIN getest middels echo.
+Alles zag er goed uit en ze zijn vrij verklaard van afwijkingen.
+Geheel boven verwachting hebben ze zich voorbeeldig gedragen.
+Weer een stap dichter bij de eerste kittens!
