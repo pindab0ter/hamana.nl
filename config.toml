@@ -3,6 +3,9 @@ languageCode = 'nl-nl'
 title = 'Hamana Cattery'
 defaultContentLanguage = 'nl'
 
+[params]
+description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens."
+
 [menu]
 [[menu.main]]
   identifier = 'home'

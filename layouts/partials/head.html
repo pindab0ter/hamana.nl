@@ -3,31 +3,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- HTML Meta Tags -->
-<title>{{ .Site.Title }} | {{ .Title }}</title>
-<meta name="description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+{{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+{{ else }}
+    <title>{{ .Site.Title }} | {{ .Title }}</title>
+{{ end }}
+<meta name="description" content="{{ .Site.Params.description }}">
 
 <!-- Google / Search Engine Tags -->
 <meta itemprop="name" content="{{ .Site.Title }}">
-<meta itemprop="description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+<meta itemprop="description" content="{{ .Site.Params.description }}">
 <meta itemprop="image" content="https://hamana.nl/logo-text.png">
 
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://hamana.nl">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ .Site.Title }}">
-<meta property="og:site_name" content="{{ .Site.Title }}">
+{{ if .IsHome }}
+    <meta property="og:title" content="{{ .Site.Title }}">
+{{ else }}
+    <meta property="og:title" content="{{ .Site.Title }} | {{ .Title }}">
+{{ end }}
 <meta property="og:locale" content="nl_NL" />
-<meta property="og:description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+<meta property="og:description" content="{{ .Site.Params.description }}">
 <meta property="og:image" content="https://hamana.nl/logo-text.png">
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:alt" content="Hamana Cattery logo">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="hamana.nl">
 <meta property="twitter:url" content="https://hamana.nl">
+{{ if .IsHome }}
 <meta name="twitter:title" content="{{ .Site.Title }}">
-<meta name="twitter:description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+{{ else }}
+<meta name="twitter:title" content="{{ .Site.Title }} | {{ .Title }}">
+{{ end }}
+<meta name="twitter:description" content="{{ .Site.Params.description }}">
 <meta name="twitter:image" content="https://hamana.nl/logo-text.png">
 
 <!-- Favicons -->
