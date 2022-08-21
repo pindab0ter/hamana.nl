@@ -1,14 +1,17 @@
-<footer>
-    <div class="flex justify-center py-1">
-        <div class="w-6 h-6">
+<footer class="flex-column">
+    <div class="flex justify-center bg-white py-4">
+        <div class="mx-2 w-6 h-6">
+            <a href="https://www.facebook.com/CatteryHamana" target="_blank">
+                {{- partial "components/facebook-logo" . -}}
+            </a>
+        </div>
+        <div class="mx-2 w-6 h-6">
             <a href="https://instagram.com/attack.of.the.fluff" target="_blank">
                 {{- partial "components/instagram-logo" . -}}
             </a>
         </div>
-        <div class="w-6 h-6">
-            <a href="https://facebook.com/attack.of.the.fluff" target="_blank">
-                {{- partial "components/facebook-logo" . -}}
-            </a>
-        </div>
+    </div>
+    <div class="bg-beige text-center text-sm py-2">
+        <p>&copy; {{ .Site.Title }} {{ now.Format "2006" }}</p>
     </div>
 </footer>

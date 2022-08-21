@@ -1,4 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+// TODO: Trim unused weights
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+html {
+  @apply text-stone-800;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-brown;
+  @apply font-heading;
+}
+
+h1 {
+  @apply text-3xl;
+  @apply font-normal;
+  @apply text-center;
+  @apply mb-4;
+  @apply text-brown;
+}
+
+h2 {
+  @apply text-2xl;
+  @apply font-medium;
+  @apply text-center;
+  @apply mb-4;
+}
+
+p {
+  @apply leading-loose;
+}

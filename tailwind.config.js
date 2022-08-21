@@ -11,7 +11,8 @@ module.exports = {
         beige: '#F4F2F2',
       },
       fontFamily: {
-        'sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
+        'heading': ['Open Sans', ...defaultTheme.fontFamily.sans],
+        'sans': ['Raleway', ...defaultTheme.fontFamily.sans],
       }
     },
   },
