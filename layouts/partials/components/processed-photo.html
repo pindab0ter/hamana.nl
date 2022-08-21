@@ -1,0 +1,18 @@
+{{ $image := resources.Get .src }}
+{{ $options := default "1200x" .options }}
+{{ $options := printf "%s webp" $options }}
+{{ $command := default "Resize" .command }}
+
+{{ if eq $command "Fit"}}
+    {{ $image = $image.Fit $options }}
+{{ else if eq $command "Resize"}}
+    {{ $image = $image.Resize $options }}
+{{ else if eq $command "Fill"}}
+    {{ $image = $image.Fill $options }}
+{{ else if eq $command "Crop"}}
+    {{ $image = $image.Crop $options }}
+{{ else }}
+    {{ errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize."}}
+{{ end }}
+
+{{ return $image.RelPermalink }}

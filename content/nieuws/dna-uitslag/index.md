@@ -5,7 +5,7 @@ draft = false
 [[resources]]
 name = "photo"
 title = "DNA-pakket"
-src = "dna-uitslag.jpg"
+src = "dna-uitslag.webp"
 +++
 
 Na lang wachten en veel gerommel van de internationale post, zijn dan eindelijk de DNA-uitslagen binnen.

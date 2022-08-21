@@ -6,7 +6,8 @@ HOST=hamana.nl
 PORT=22141
 DIR=/httpdocs/
 
-hugo
+hugo --cleanDestinationDir
+
 rsync \
 	--verbose \
 	--archive \

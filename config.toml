@@ -13,3 +13,10 @@ defaultContentLanguage = 'nl'
   identifier = 'niews'
   name = 'Nieuws'
   url = '/nieuws'
+
+[imaging]
+anchor = 'Smart'
+bgColor = '#ffffff'
+hint = 'photo'
+quality = 75
+resampleFilter = 'Box'
