@@ -2,6 +2,35 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- HTML Meta Tags -->
+<title>{{ .Site.Title }} | {{ .Title }}</title>
+<meta name="description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="{{ .Site.Title }}">
+<meta itemprop="description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+<meta itemprop="image" content="https://hamana.nl/logo-text.png">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://hamana.nl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+<meta property="og:image" content="https://hamana.nl/logo-text.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="Hamana Cattery logo">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="hamana.nl">
+<meta property="twitter:url" content="https://hamana.nl">
+<meta name="twitter:title" content="{{ .Site.Title }}">
+<meta name="twitter:description" content="Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.">
+<meta name="twitter:image" content="https://hamana.nl/logo-text.png">
+
+<!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -9,8 +38,6 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#d49635">
-
-<title>{{ .Site.Title }} | {{ .Title }}</title>
 
 {{ $sass := resources.Get "style.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.PostCSS }}
