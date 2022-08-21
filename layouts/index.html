@@ -1,7 +1,51 @@
 {{ define "main" }}
+<article class="bg-beige">
+    <img src="/photos/yuki-basking-bed-ginny-washing-in-bg.jpg" alt="Yuki basking in the sun on bed" class="w-full aspect-video md:aspect-[21/9] object-cover object-top" style="object-position: 100% 7%" />
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="p-12 md:py-48 md:px-24 lg:px-36">
+            <h1 class="mb-8 text-start text-4xl">Over ons</h1>
+            <p>Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.</p>
+            <div class="mt-16 -ml-2">
+                <a href="/nieuws" class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full mr-4">
+                    Het laatste nieuws
+                </a>
+                <!-- TODO: Create Kittens page -->
+                <a href="#" class="text-orange hover:bg-orange hover:text-white transition font-light py-3 px-4 border border-orange rounded-full">
+                    Kittens
+                </a>
+            </div>
+        </div>
+        <div class="hidden md:flex bg-white content-center">
+            <img src="/logo-text.png" alt="Hamana Cattery" class="object-contain" />
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3">
+        <div class="aspect-video md:aspect-square bg-cover bg-right bg-[position-x:40%]" style="background-image: url('/photos/yuki-ginny-balcony.png'); background-position-x: 40%;">
+            <div class="grid place-content-center h-full w-full bg-orange/75">
+                <!-- TODO: Create FAQ page -->
+                <a href="#" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
+                    Veelgestelde vragen
+                </a>
+            </div>
+        </div>
+        <div class="aspect-video md:aspect-square bg-cover" style="background-image: url('/photos/ginny-kitten.jpg');">
+            <div class="grid place-content-center h-full w-full bg-orange/75">
+                <!-- TODO: Create Kittens page -->
+                <a href="#" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
+                    Kittens
+                </a>
+            </div>
+        </div>
+        <div class="aspect-video md:aspect-square bg-cover bg-[center_top_50%]" style="background-image: url('/photos/yuki-ginny-together-on-bed.jpg');">
+            <div class="grid place-content-center h-full w-full bg-orange/75">
+                <!-- TODO: Create Cats page -->
+                <a href="#" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
+                    Onze poezen
+                </a>
+            </div>
+        </div>
+    </div>
 
-<article>
-{{ .Content }}
+    <!-- TODO: Add contact form -->
 </article>
-
 {{ end }}

@@ -1,26 +1,27 @@
 <header>
     <div class="flex-column md:flex justify-center md:justify-between px-16 py-8 md:py-4">
-        <div class="flex-column md:flex md:items-center">
-            <a href="/">
+        <a href="/">
+            <div class="flex-column md:flex md:items-center">
                 <img src="/logo-cats.png" alt="Hamana Cattery" class="w-48 mx-auto md:mx-0" />
-            </a>
-            <div class="flex-column md:pl-4">
-                <p class="text-3xl font-extralight text-center mt-4 mb-2">Cattery Hamana</p>
-                <p class="text-l text-center">Welkom bij huize Hamana</p>
+                <div class="flex-column md:pl-4">
+                    <p class="text-3xl font-extralight text-center mt-4 mb-2">Cattery Hamana</p>
+                    <p class="text-l text-center">Welkom bij huize Hamana</p>
+                </div>
             </div>
-        </div>
+        </a>
 
+        <!-- TODO: Add hamburger menu -->
         <nav class="hidden md:flex md:visible items-center">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
             <a class="px-2{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
             {{ end }}
-            <div class="mx-1 h-5 w-5">
+            <div class="mx-2 h-5 w-5">
                 <a href="https://www.facebook.com/CatteryHamana" target="_blank">
                     {{- partial "components/facebook-logo" . -}}
                 </a>
             </div>
-            <div class="mx-1 h-5 w-5">
+            <div class="mx-2 h-5 w-5">
                 <a href="https://instagram.com/attack.of.the.fluff" target="_blank">
                     {{- partial "components/instagram-logo" . -}}
                 </a>
