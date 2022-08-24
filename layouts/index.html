@@ -1,25 +1,30 @@
 {{ define "main" }}
 <article class="bg-beige -mb-1 pb-1">
     <img src="/photos/yuki-basking-bed-ginny-washing-in-bg.webp" alt="Yuki basking in the sun on bed" class="w-full aspect-video md:aspect-[21/9] object-cover object-top" style="object-position: 100% 7%" />
+
     <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="p-12 md:py-48 md:px-24 lg:px-36">
+
             <h1 class="mb-8 text-start">Over ons</h1>
             <p>Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.</p>
-            <!-- TODO: Fix these buttons not wrapping correctly -->
+
             <div class="mt-16 -ml-4 flex flex-wrap">
                 <a href="/nieuws" class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap">
                     Het laatste nieuws
                 </a>
+
                 <!-- TODO: Create Kittens page -->
                 <a href="#" class="text-orange hover:bg-orange hover:text-white transition font-light py-3 px-4 border border-orange rounded-full m-2">
                     Kittens
                 </a>
             </div>
         </div>
+
         <div class="hidden md:flex bg-white content-center">
             <img src="/logo-text.webp" alt="Hamana Cattery" class="object-contain" />
         </div>
     </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3">
         <div class="aspect-video md:aspect-square bg-cover bg-right bg-[position-x:40%]" style="background-image: url('/photos/yuki-ginny-balcony.webp'); background-position-x: 40%;">
             <div class="grid place-content-center h-full w-full bg-orange/75">
@@ -29,6 +34,7 @@
                 </a>
             </div>
         </div>
+
         <div class="aspect-video md:aspect-square bg-cover" style="background-image: url('/photos/ginny-kitten.webp');">
             <div class="grid place-content-center h-full w-full bg-orange/75">
                 <!-- TODO: Create Kittens page -->
@@ -37,6 +43,7 @@
                 </a>
             </div>
         </div>
+
         <div class="aspect-video md:aspect-square bg-cover bg-[center_top_50%]" style="background-image: url('/photos/yuki-ginny-together-on-bed.webp');">
             <div class="grid place-content-center h-full w-full bg-orange/75">
                 <a href="/onze-poezen/" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
@@ -46,32 +53,7 @@
         </div>
     </div>
 
-    <div class="bg-white grid grid-cols-1 md:grid-cols-2 md:m-16">
-        <div class="py-24 md:px-10 lg:px-20">
-            <h1>Contact</h1>
-            <div class="flex justify-center">
-                <div class="mx-2 h-5 w-5">
-                    <a href="https://www.facebook.com/CatteryHamana" target="_blank" class="text-stone-700">
-                        {{- partial "components/facebook-logo" . -}}
-                    </a>
-                </div>
-                <div class="mx-2 h-5 w-5">
-                    <a href="https://instagram.com/attack.of.the.fluff" target="_blank" class="text-stone-700">
-                        {{- partial "components/instagram-logo" . -}}
-                    </a>
-                </div>
-            </div>
-            <form method="post" action="https://forms.un-static.com/forms/1b7b3742d437de093ac5c3507131de88ae85602d" class="mt-16 flex flex-col">
-                <input type="text" name="Naam" placeholder="Vul je naam in" class="mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800" required>
-                <input type="email" name="Email" placeholder="Vul je e-mailadres in" class="mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800" required>
-                <input type="text" name="Onderwerp" placeholder="Vul het onderwerp in" class="mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800" required>
-                <textarea name="Bericht" cols="40" rows="5" placeholder="Typ hier je bericht…" class="resize-none mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800"></textarea>
-                <button type="submit">Verstuur</button>
-            </form>
-        </div>
-        <div class="hidden md:flex bg-white content-center">
-            <img src="/photos/yuki-ginny-balcony-looking-outside-together.webp" alt="Yuki and Ginny looking outside from the balcony together" class="object-cover" />
-        </div>
-    </div>
+    {{- partial "components/contact-form.html" -}}
+
 </article>
 {{ end }}
