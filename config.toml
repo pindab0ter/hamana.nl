@@ -16,7 +16,7 @@ description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich 
 [[menu.main]]
   identifier = 'niews'
   name = 'Nieuws'
-  url = '/nieuws'
+  url = '/nieuws/'
 
 [imaging]
 anchor = 'Smart'
