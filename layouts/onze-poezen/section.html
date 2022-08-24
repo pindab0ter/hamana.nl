@@ -1,0 +1,52 @@
+{{ define "main" }}
+<main class="bg-beige md:pb-16">
+    <div class="aspect-square md:aspect-auto md:h-48 bg-cover bg-[center_top_50%]" style="background-image: url('/photos/yuki-ginny-close-up.webp');">
+        <div class="text-white grid place-content-center h-full w-full bg-stone-800/25">
+            <h1 class="text-white">
+                Onze katten
+            </h1>
+
+            <p class="text-white text-serif">
+                Lief, leuk en een tikkeltje gestoord
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-16 md:grid md:grid-cols-2 lg:mx-24 xl:mx-48">
+        {{ range sort .Paginator.Pages.Reverse }}
+
+        <div class="bg-white md:hidden">
+            {{ with .Resources.GetMatch "photo" }}
+            <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
+            {{ end }}
+            <div class="py-14">
+                <h2>{{ .Title }}</h2>
+                <p class="text-center text-lg font-serif mb-4">
+                    {{ .Description }}</br>
+                    {{ .Date | time.Format ":date_short" }}
+                </p>
+                <div class="px-6 text-center">{{ .Content }}</div>
+            </div>
+        </div>
+
+        <div class="hidden md:block bg-white h-full mx-8 mb-10">
+            <div>
+                {{ with .Resources.GetMatch "photo" }}
+                <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
+                {{ end }}
+            </div>
+            <div class="p-8">
+                <div>
+                    <h2>{{ .Title }}</h2>
+                    <p class="text-lg mb-4">
+                        {{ .Description }}</br>
+                        {{ .Date | time.Format ":date_short" }}
+                    </p>
+                    <div>{{ .Content }}</div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</main>
+{{ end }}
