@@ -2,6 +2,7 @@ baseURL = 'https://hamana.nl/'
 languageCode = 'nl-nl'
 title = 'Hamana Cattery'
 defaultContentLanguage = 'nl'
+enableRobotsTXT = true
 
 [params]
 description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens."
