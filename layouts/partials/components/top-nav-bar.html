@@ -14,7 +14,7 @@
 </nav>
 
 <div x-data="{ open: false }" class="md:hidden">
-    <nav id="nav-screen" class="fixed w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16 transition" x-show="open" x-transition x-transition:enter.duration.200ms x-transition:leave.duration.100ms>
+    <nav id="nav-screen" class="fixed w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16 transition touch-none" x-show="open" x-transition x-transition:enter.duration.200ms x-transition:leave.duration.100ms>
         <h1 class="mb-20">Hamana Cattery</h1>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
