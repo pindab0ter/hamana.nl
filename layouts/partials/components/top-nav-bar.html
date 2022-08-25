@@ -17,10 +17,20 @@
     </div>
 </nav>
 
-<nav class="isolate fixed w-screen left-0 top-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16" aria-hidden="true">
-    <h1 class="mb-20">Hamana Cattery</h1>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
+<div x-data="{ open: false }" class="md:hidden">
+    <nav id="nav-screen" class="fixed w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16 transition" x-show="open" x-transition x-transition:enter.duration.200ms x-transition:leave.duration.100ms>
+        <h1 class="mb-20">Hamana Cattery</h1>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
         <a class="block text-2xl text-center mb-8{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-    {{ end }}
-</nav>
+        {{ end }}
+    </nav>
+
+    <div class="absolute z-0 top-0 right-0 p-8 cursor-pointer" @click="open = !open">
+        <div class="tham tham-e-squeeze tham-w-8" :class="open && 'tham-active'">
+            <div class="tham-box">
+                <div class="tham-inner bg-stone-700" />
+            </div>
+        </div>
+    </div>
+</div>
