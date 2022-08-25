@@ -4,17 +4,13 @@
     <a class="px-2{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     {{ end }}
 
-    <div class="mx-2 h-5 w-5">
-        <a href="https://www.facebook.com/CatteryHamana" target="_blank" class="text-stone-800">
-            {{- partial "components/facebook-logo" . -}}
-        </a>
-    </div>
+    <a href="https://www.facebook.com/CatteryHamana" target="_blank" class="mx-2 h-5 w-5 text-stone-800">
+        {{- partial "components/facebook-logo" . -}}
+    </a>
 
-    <div class="mx-2 h-5 w-5">
-        <a href="https://instagram.com/attack.of.the.fluff" target="_blank" class="text-stone-800">
-            {{- partial "components/instagram-logo" . -}}
-        </a>
-    </div>
+    <a href="https://instagram.com/attack.of.the.fluff" target="_blank" class="mx-2 h-5 w-5 text-stone-800">
+        {{- partial "components/instagram-logo" . -}}
+    </a>
 </nav>
 
 <div x-data="{ open: false }" class="md:hidden">
@@ -22,11 +18,21 @@
         <h1 class="mb-20">Hamana Cattery</h1>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <a class="block text-2xl text-center mb-8{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        <a class="block text-2xl text-center mb-8 {{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
         {{ end }}
+
+        <div class="w-full flex space-x-4 justify-center">
+            <a href="https://www.facebook.com/CatteryHamana" target="_blank" class="p-4 h-16 w-16 text-stone-800">
+                {{- partial "components/facebook-logo" . -}}
+            </a>
+
+            <a href="https://instagram.com/attack.of.the.fluff" target="_blank" class="p-4 h-16 w-16 text-stone-800">
+                {{- partial "components/instagram-logo" . -}}
+            </a>
+        </div>
     </nav>
 
-    <div class="absolute z-0 top-0 right-0 p-8 cursor-pointer" @click="open = !open">
+    <div class="absolute z-0 top-2 right-2 p-6 cursor-pointer rounded-lg" @click="open = !open">
         <div class="tham tham-e-squeeze tham-w-8" :class="open && 'tham-active'">
             <div class="tham-box">
                 <div class="tham-inner bg-stone-700" />
