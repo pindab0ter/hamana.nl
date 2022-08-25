@@ -15,7 +15,7 @@
 
 <div x-data="{ open: false }" class="md:hidden">
     <nav id="nav-screen"
-         class="fixed w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16 transition touch-none"
+         class="fixed z-40 w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16 transition touch-none"
          x-show="open"
          x-transition
          x-transition:enter.duration.200ms
@@ -43,7 +43,7 @@
         </div>
     </nav>
 
-    <div class="fixed z-0 top-2 right-2 p-6 cursor-pointer rounded-lg backdrop-blur-md bg-white/25" @click="open = !open">
+    <div class="fixed z-50 top-2 right-2 p-6 cursor-pointer rounded-lg backdrop-blur-md bg-white/25" @click="open = !open">
         <div class="tham tham-e-squeeze tham-w-8" :class="open && 'tham-active'">
             <div class="tham-box">
                 <div class="tham-inner bg-stone-700" />
