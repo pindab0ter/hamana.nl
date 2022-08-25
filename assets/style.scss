@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-// TODO: Trim unused weights
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 
 html {
   @apply text-stone-800;
