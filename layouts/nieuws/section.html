@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="bg-beige md:pb-16">
-  <div class="text-center pt-16 pb-12">
+  <div class="text-center pt-4 pb-12">
     {{ .Content }}
   </div>
   <div>
@@ -11,17 +11,17 @@
           <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
         {{ end }}
         <div class="py-14">
-          <h2>{{ .Title }}</h2>
+          <h2 class="text-center mt-4">{{ .Title }}</h2>
           <p class="text-center text-lg font-serif mb-4">{{ .Date | time.Format ":date_long" }}</p>
           <div class="px-6 text-center">{{ .Content }}</div>
         </div>
       </div>
 
       <div class="hidden md:grid bg-white grid-cols-2 mx-16 mb-10 last:mb-0">
-        <div class="p-8 grid content-center">
+        <div class="px-8 grid content-center">
           <div>
-            <h2>{{ .Title }}</h2>
-            <p class="text-center text-lg mb-4">{{ .Date | time.Format ":date_long" }}</p>
+            <h2 class="text-center">{{ .Title }}</h2>
+            <p class="text-center text-lg font-serif mb-4">{{ .Date | time.Format ":date_long" }}</p>
             <div class="text-center">{{ .Content }}</div>
           </div>
         </div>

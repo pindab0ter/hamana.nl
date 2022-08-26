@@ -8,12 +8,12 @@
         class="h-full w-full object-cover z-0"
       />
     </div>
-    <div class="z-10 w-full h-full grid place-content-center bg-stone-800/25 backdrop-blur-xs">
+    <div class="z-10 w-full h-full grid place-content-center text-center bg-stone-800/25 backdrop-blur-xs">
       <h1 class="text-white">
         Onze poezen
       </h1>
 
-      <p class="text-white text-serif">
+      <p class="text-white">
         Lief, leuk en een tikkeltje gestoord
       </p>
     </div>
@@ -41,10 +41,10 @@
             <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
             {{ end }}
           </div>
-          <div class="p-8">
+          <div class="px-8">
             <div>
               <h2>{{ .Title }}</h2>
-              <p class="text-lg mb-4">
+              <p class="text-lg font-serif mb-4">
                 {{ .Description }}</br>
                 {{ .Date | time.Format ":date_short" }}
               </p>
