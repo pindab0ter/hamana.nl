@@ -1,6 +1,6 @@
 baseURL = 'https://hamana.nl/'
 languageCode = 'nl-nl'
-title = 'Hamana Cattery'
+title = 'Cattery Hamana'
 defaultContentLanguage = 'nl'
 enableRobotsTXT = true
 
