@@ -37,3 +37,7 @@ p {
 path {
   fill: currentColor;
 }
+
+[x-cloak] {
+  display: none !important;
+}
