@@ -34,6 +34,10 @@ p {
   @apply mb-8
 }
 
+li {
+  @apply leading-loose;
+}
+
 path {
   fill: currentColor;
 }
