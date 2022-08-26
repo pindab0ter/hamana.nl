@@ -8,20 +8,20 @@ enableRobotsTXT = true
 description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens."
 
 [menu]
-[[menu.main]]
-  identifier = 'home'
-  name = 'Home'
-  url = '/'
+  [[menu.main]]
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
 
-[[menu.main]]
-  identifier = 'niews'
-  name = 'Nieuws'
-  url = '/nieuws/'
+  [[menu.main]]
+    identifier = 'niews'
+    name = 'Nieuws'
+    url = '/nieuws/'
 
-[[menu.main]]
-  identifier = 'onze-poezen'
-  name = 'Onze poezen'
-  url = '/onze-poezen/'
+  [[menu.main]]
+    identifier = 'onze-poezen'
+    name = 'Onze poezen'
+    url = '/onze-poezen/'
 
 [imaging]
 anchor = 'Smart'

@@ -50,6 +50,11 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#d49635">
 
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 {{ $sass := resources.Get "style.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.PostCSS }}
 {{ if .Site.IsServer }}
@@ -63,5 +68,10 @@
 {{ end }}
 
 {{ $ts := resources.Get "app.ts" }}
-{{ $script := $ts | js.Build | fingerprint }}
-<script data-precache src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ if .Site.IsServer }}
+    {{ $script := $ts | js.Build }}
+    <script data-precache src="{{ $script.Permalink }}" defer></script>
+{{ else }}
+    {{ $script := $ts | js.Build (dict "minify" true) | resources.Minify | fingerprint }}
+    <script data-precache src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}

@@ -13,8 +13,13 @@ module.exports = {
       fontFamily: {
         'heading': ['Open Sans', ...defaultTheme.fontFamily.sans],
         'sans': ['Raleway', ...defaultTheme.fontFamily.sans],
+      },
+      backdropBlur: {
+        xs: '2px',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-hamburgers')
+  ],
 }
