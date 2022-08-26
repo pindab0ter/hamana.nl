@@ -4,6 +4,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./layouts/**/*.html', './content/**/*.md'],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         brown: '#716056',
