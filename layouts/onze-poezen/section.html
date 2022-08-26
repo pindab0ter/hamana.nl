@@ -19,14 +19,14 @@
     </div>
   </div>
 
-  <div class="mt-16 md:grid md:grid-cols-2 lg:mx-24 xl:mx-48">
+  <div class="pt-16 bg-white md:bg-inherit md:grid md:grid-cols-2 lg:mx-24 xl:mx-48">
     {{ range sort .Paginator.Pages.Reverse }}
-        <div class="bg-white md:hidden">
+        <div class="md:hidden">
           {{ with .Resources.GetMatch "photo" }}
-          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
+          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="px-2 h-fit w-full aspect-square object-cover" />
           {{ end }}
           <div class="py-14">
-            <h2>{{ .Title }}</h2>
+            <h2 class="text-center mt-0">{{ .Title }}</h2>
             <p class="text-center text-lg font-serif mb-4">
               {{ .Description }}</br>
               {{ .Date | time.Format ":date_short" }}
