@@ -4,9 +4,9 @@
 
 <!-- HTML Meta Tags -->
 {{ if .IsHome }}
-    <title>{{ .Site.Title }}</title>
+<title>{{ .Site.Title }}</title>
 {{ else }}
-    <title>{{ .Site.Title }} | {{ .Title }}</title>
+<title>{{ .Site.Title }} | {{ .Title }}</title>
 {{ end }}
 <meta name="description" content="{{ .Site.Params.description }}">
 
@@ -53,7 +53,10 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 
 {{ $sass := resources.Get "style.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.PostCSS }}
@@ -64,7 +67,13 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 {{ else }}
     {{ $style := $style | minify | fingerprint | resources.PostProcess }}
-    <link data-precache rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
+    <link
+      data-precache
+      rel="stylesheet"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+      crossorigin="anonymous"
+    />
 {{ end }}
 
 {{ $ts := resources.Get "app.ts" }}
@@ -73,5 +82,11 @@
     <script data-precache src="{{ $script.Permalink }}" defer></script>
 {{ else }}
     {{ $script := $ts | js.Build (dict "minify" true) | resources.Minify | fingerprint }}
-    <script data-precache src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+    <script
+      data-precache
+      src="{{ $script.Permalink }}"
+      integrity="{{ $script.Data.Integrity }}"
+      crossorigin="anonymous"
+      defer
+    ></script>
 {{ end }}

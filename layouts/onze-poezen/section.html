@@ -1,57 +1,58 @@
 {{ define "main" }}
 <main class="bg-beige md:pb-16">
-    <div class="text-white flex w-full aspect-square md:aspect-auto md:h-48">
-        <div class="absolute aspect-square md:aspect-auto w-full md:h-48">
-            <img src="/photos/yuki-ginny-close-up.webp"
-                 alt="Yuki and Ginny close up"
-                 class="h-full w-full object-cover z-0"/>
-        </div>
-        <div class="z-10 w-full h-full grid place-content-center bg-stone-800/25 backdrop-blur-xs">
-            <h1 class="text-white">
-                Onze poezen
-            </h1>
-
-            <p class="text-white text-serif">
-                Lief, leuk en een tikkeltje gestoord
-            </p>
-        </div>
+  <div class="text-white flex w-full aspect-square md:aspect-auto md:h-48">
+    <div class="absolute aspect-square md:aspect-auto w-full md:h-48">
+      <img
+        src="/photos/yuki-ginny-close-up.webp"
+        alt="Yuki and Ginny close up"
+        class="h-full w-full object-cover z-0"
+      />
     </div>
+    <div class="z-10 w-full h-full grid place-content-center bg-stone-800/25 backdrop-blur-xs">
+      <h1 class="text-white">
+        Onze poezen
+      </h1>
 
-    <div class="mt-16 md:grid md:grid-cols-2 lg:mx-24 xl:mx-48">
-        {{ range sort .Paginator.Pages.Reverse }}
+      <p class="text-white text-serif">
+        Lief, leuk en een tikkeltje gestoord
+      </p>
+    </div>
+  </div>
 
+  <div class="mt-16 md:grid md:grid-cols-2 lg:mx-24 xl:mx-48">
+    {{ range sort .Paginator.Pages.Reverse }}
         <div class="bg-white md:hidden">
-            {{ with .Resources.GetMatch "photo" }}
-            <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover"/>
-            {{ end }}
-            <div class="py-14">
-                <h2>{{ .Title }}</h2>
-                <p class="text-center text-lg font-serif mb-4">
-                    {{ .Description }}</br>
-                    {{ .Date | time.Format ":date_short" }}
-                </p>
-                <div class="px-6 text-center">{{ .Content }}</div>
-            </div>
+          {{ with .Resources.GetMatch "photo" }}
+          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
+          {{ end }}
+          <div class="py-14">
+            <h2>{{ .Title }}</h2>
+            <p class="text-center text-lg font-serif mb-4">
+              {{ .Description }}</br>
+              {{ .Date | time.Format ":date_short" }}
+            </p>
+            <div class="px-6 text-center">{{ .Content }}</div>
+          </div>
         </div>
 
         <div class="hidden md:block bg-white h-full mx-8 mb-10">
+          <div>
+            {{ with .Resources.GetMatch "photo" }}
+            <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
+            {{ end }}
+          </div>
+          <div class="p-8">
             <div>
-                {{ with .Resources.GetMatch "photo" }}
-                <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover"/>
-                {{ end }}
+              <h2>{{ .Title }}</h2>
+              <p class="text-lg mb-4">
+                {{ .Description }}</br>
+                {{ .Date | time.Format ":date_short" }}
+              </p>
+              <div>{{ .Content }}</div>
             </div>
-            <div class="p-8">
-                <div>
-                    <h2>{{ .Title }}</h2>
-                    <p class="text-lg mb-4">
-                        {{ .Description }}</br>
-                        {{ .Date | time.Format ":date_short" }}
-                    </p>
-                    <div>{{ .Content }}</div>
-                </div>
-            </div>
+          </div>
         </div>
-        {{ end }}
-    </div>
+    {{ end }}
+  </div>
 </main>
 {{ end }}
