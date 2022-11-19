@@ -4,29 +4,16 @@
     <img src="/photos/yuki-ginny-balcony.webp" alt="Yuki and Ginny in the balcony" class="w-full h-full object-cover">
     <div
       class="grid place-content-center text-center"
-      x-data="{ tooltip: false }"
     >
       <div class="relative inline-flex justify-center mt-16 md:mt-8">
         <h1
           class="mt-0 z-20"
-          x-on:mouseover="tooltip = true"
-          x-on:mouseleave="tooltip = false"
         >
-          FAQ
+          <abbr title="Frequently Asked Questions">
+            FAQ
+          </abbr>
         </h1>
 
-        <div class="relative" x-cloak x-show.transition.origin.top="tooltip" x-transition>
-          <div class="absolute top-0 z-10 w-64 p-2 -mt-1 text-base text-white transform -translate-x-full -translate-y-full bg-brown rounded-lg shadow-lg">
-            Frequently Asked Questions
-          </div>
-          <svg
-            class="absolute z-10 w-6 h-6 text-brown transform -translate-x-12 -translate-y-3 fill-current stroke-current"
-            width="8"
-            height="8"
-          >
-            <rect x="12" y="-10" width="8" height="8" transform="rotate(45)" />
-          </svg>
-        </div>
       </div>
       <p class="font-serif mb-16">Veelgestelde vragen</p>
     </div>
