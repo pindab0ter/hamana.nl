@@ -90,3 +90,7 @@
       defer
     ></script>
 {{ end }}
+
+{{ if not .Site.IsServer }}
+    <script defer data-domain="hamana.nl" src="https://plausible.pixel-hosting.nl/js/plausible.js"></script>
+{{ end }}
