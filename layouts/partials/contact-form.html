@@ -1,0 +1,61 @@
+<div class="bg-white grid grid-cols-1 lg:grid-cols-2">
+
+  {{ if .showPictureMobile }}
+  <div class="flex lg:hidden bg-white mt-8 mb-16 content-center">
+    <img src="/photos/yuki-ginny-balcony-looking-outside-together.webp"
+         alt="Yuki and Ginny looking outside from the balcony together"
+         class="object-cover"/>
+  </div>
+  {{ end }}
+
+  <div class="{{ if (not .showPictureMobile) }}py-24 {{ end }}lg:px-10 lg:px-20">
+    <h1 class="text-center">
+      Contact
+    </h1>
+    <div class="flex justify-center">
+      <div class="mx-2 h-5 w-5">
+        <a href="https://www.facebook.com/CatteryHamana" target="_blank" class="text-stone-700">
+          {{- partial "facebook-logo" . -}}
+        </a>
+      </div>
+      <div class="mx-2 h-5 w-5">
+        <a href="https://instagram.com/attack.of.the.fluff" target="_blank" class="text-stone-700">
+          {{- partial "instagram-logo" . -}}
+        </a>
+      </div>
+    </div>
+
+    <form method="post"
+          action="https://forms.un-static.com/forms/1b7b3742d437de093ac5c3507131de88ae85602d"
+          class="mt-16 flex flex-col">
+      <input type="text"
+             name="Naam"
+             placeholder="Vul je naam in"
+             class="mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800"
+             required>
+      <input type="email"
+             name="Email"
+             placeholder="Vul je e-mailadres in"
+             class="mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800"
+             required>
+      <input type="text"
+             name="Onderwerp"
+             placeholder="Vul het onderwerp in"
+             class="mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800"
+             required>
+      <textarea name="Bericht"
+                cols="40"
+                rows="5"
+                placeholder="Typ hier je bericht…"
+                class="resize-none mx-2 mb-2 px-2 py-4 border border-white border-b-stone-800 hover:border-stone-800"
+      ></textarea>
+      <button type="submit">Verstuur</button>
+    </form>
+  </div>
+
+  <div class="hidden lg:flex bg-white content-center">
+    <img src="/photos/yuki-ginny-balcony-looking-outside-together.webp"
+         alt="Yuki and Ginny looking outside from the balcony together"
+         class="object-cover"/>
+  </div>
+</div>
