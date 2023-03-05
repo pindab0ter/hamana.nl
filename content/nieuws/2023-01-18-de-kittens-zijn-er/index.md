@@ -1,0 +1,14 @@
++++
+title = "De kittens zijn er!"
+date = 2023-01-18
+draft = false
+[[resources]]
+name = "photo"
+title = "Yuki met de kleintjes"
+src = "yuki-met-de-kleintjes.webp"
++++
+
+Vanmiddag om half 3 begon de bevalling. Yuki ging in de kraamkist liggen en wist precies wat ze moest doen. Kitten 1 en
+2 kwamen snel ter wereld. Na een pauze kwamen 3 en 4. Nummer 5 liet bijna een uur op zich wachten en kwam in stuit.
+Alle kittens hebben een gewicht tussen de 94-124 gram. Yuki deed het super voor haar (en ons!) eerste keer, we zijn
+enorm trots op haar!

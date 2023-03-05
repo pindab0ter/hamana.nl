@@ -1,4 +1,4 @@
-<nav class="hidden md:flex md:visible items-center">
+<nav class="hidden lg:flex lg:visible items-center">
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
       <a class="px-2 active" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
@@ -13,17 +13,17 @@
   </a>
 </nav>
 
-<div x-data="{ open: false }" class="md:hidden">
+<div x-data="{ open: false }" class="lg:hidden">
   <nav
     id="nav-screen"
-    class="fixed z-40 w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-16 transition touch-none"
+    class="fixed z-40 w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-10 transition touch-none"
     x-show="open"
     x-transition
     x-transition:enter.duration.200ms
     x-transition:leave.duration.100ms
   >
 
-    <h1 class="mb-20 text-center">{{ .Site.Title }}</h1>
+    <h1 class="mb-16 text-center">{{ .Site.Title }}</h1>
 
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}

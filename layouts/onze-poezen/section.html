@@ -1,7 +1,7 @@
 {{ define "main" }}
-<main class="bg-beige md:pb-16">
-  <div class="text-white flex w-full aspect-square md:aspect-auto md:h-48">
-    <div class="absolute aspect-square md:aspect-auto w-full md:h-48">
+<main class="bg-beige lg:pb-16">
+  <div class="text-white flex w-full aspect-square lg:aspect-auto lg:h-48">
+    <div class="absolute aspect-square lg:aspect-auto w-full lg:h-48">
       <img
         src="/photos/yuki-ginny-close-up.webp"
         alt="Yuki and Ginny close up"
@@ -19,9 +19,9 @@
     </div>
   </div>
 
-  <div class="pt-16 bg-white md:bg-inherit md:grid md:grid-cols-2 lg:mx-24 xl:mx-48">
+  <div class="pt-16 bg-white lg:bg-inherit lg:grid lg:grid-cols-2 lg:mx-24 xl:mx-48">
     {{ range sort .Paginator.Pages.Reverse }}
-        <div class="md:hidden">
+        <div class="lg:hidden">
           {{ with .Resources.GetMatch "photo" }}
           <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="px-2 h-fit w-full aspect-square object-cover" />
           {{ end }}
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="hidden md:block bg-white h-full mx-8 mb-10">
+        <div class="hidden lg:block bg-white h-full mx-8 mb-10">
           <div>
             {{ with .Resources.GetMatch "photo" }}
             <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />

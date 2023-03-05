@@ -1,6 +1,6 @@
-<div class="bg-white grid grid-cols-1 md:grid-cols-2 md:m-16">
+<div class="bg-white grid grid-cols-1 lg:grid-cols-2 lg:m-16">
   {{ if .showPictureMobile }}
-  <div class="flex md:hidden bg-white mt-8 mb-16 content-center">
+  <div class="flex lg:hidden bg-white mt-8 mb-16 content-center">
     <img
       src="/photos/yuki-ginny-balcony-looking-outside-together.webp"
       alt="Yuki and Ginny looking outside from the balcony together"
@@ -8,7 +8,7 @@
     />
   </div>
   {{ end }}
-  <div class="{{ if (not .showPictureMobile) }}py-24 {{ end }}md:px-10 lg:px-20">
+  <div class="{{ if (not .showPictureMobile) }}py-24 {{ end }}lg:px-10 lg:px-20">
     <h1 class="text-center">Contact</h1>
     <div class="flex justify-center">
       <div class="mx-2 h-5 w-5">
@@ -58,7 +58,7 @@
       <button type="submit">Verstuur</button>
     </form>
   </div>
-  <div class="hidden md:flex bg-white content-center">
+  <div class="hidden lg:flex bg-white content-center">
     <img
       src="/photos/yuki-ginny-balcony-looking-outside-together.webp"
       alt="Yuki and Ginny looking outside from the balcony together"

@@ -1,6 +1,6 @@
 +++
 title = "DNA-uitslag"
-date = 2022-07-26T23:57:49+02:00
+date = 2022-07-26
 draft = false
 [[resources]]
 name = "photo"

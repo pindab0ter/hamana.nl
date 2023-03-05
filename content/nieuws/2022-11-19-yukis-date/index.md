@@ -4,7 +4,7 @@ date = 2022-11-19
 [[resources]]
 name = "photo"
 title = "Yuki en Ties"
-src = "yuki_en_ties.webp"
+src = "yuki-en-ties.webp"
 +++
 
 Na drie keer op en neer rijden naar Reek, is het toch eindelijk gelukt tussen Yuki en Ties (Famous Fellow Floris van 't
