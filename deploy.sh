@@ -16,5 +16,3 @@ rsync \
 	--rsh "ssh -p $PORT" \
 	public/ \
 	"${USER}@${HOST}:${DIR}"
-
-exit 0
