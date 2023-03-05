@@ -1,36 +1,39 @@
 {{ define "main" }}
 <main>
-  <div class="lg:grid lg:grid-cols-2 lg:px-20 lg:py-16 bg-beige">
-    <img
-      src="/photos/ginny-kitten.webp"
-      alt="Yuki and Ginny in the balcony"
-      class="lg:hidden w-full h-full object-cover"
-    >
-    <div class="grid place-content-center lg:px-16">
-      <h1>Ons kittenbeleid</h1>
+  <div class="bg-beige">
+    <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
+      <img src="/photos/ginny-kitten.webp"
+           alt="Yuki and Ginny in the balcony"
+           class="lg:hidden w-full aspect-[21/9] object-cover"
+           style="object-position: 100% 12%">
+      <div class="grid place-content-center lg:px-16">
+        <h1 class="my-16 lg:my-0">Ons kittenbeleid</h1>
+      </div>
+
+      <img src="/photos/ginny-kitten.webp"
+           alt="Yuki and Ginny in the balcony"
+           class="hidden lg:block w-full aspect-square object-cover"
+           style="object-position: 100% 0">
     </div>
-    <img
-      src="/photos/ginny-kitten.webp"
-      alt="Yuki and Ginny in the balcony"
-      class="hidden lg:block w-full h-full object-cover"
-    >
   </div>
 
-  <div class="container px-2 sm:px-16 lg:px-24 lg:px-48">
+  <div class="container max-w-screen-md px-8 lg:px-0">
     <div class="py-28">
       <p>Als u interesse heeft in een kitten van ons, dan wilt u natuurlijk weten wat u kunt verwachten. Onze kittens
-        worden grootgebracht in huis. De eerste paar weken zullen moeder en kroost in een afgesloten kamer alle rust
-        krijgen die ze nodig hebben. Na vier weken beginnen de kittens meer te bewegen en mogen ze de rest van het huis
-        ontdekken. Ze zullen tijdens hun verblijf bij ons aan allerlei geluiden, geuren en ervaringen blootgesteld
-        worden. We zijn gewend om onze poezen op te pakken en ze (fysieke) aandacht te geven.<br />
-        Dit geeft de kittens een uitstekende basis om verder op door te groeien.</p>
+         worden grootgebracht in huis. De eerste paar weken zullen moeder en kroost in een afgesloten kamer alle rust
+         krijgen die ze nodig hebben. Na vier weken beginnen de kittens meer te bewegen en mogen ze de rest van het huis
+         ontdekken. Ze zullen tijdens hun verblijf bij ons aan allerlei geluiden, geuren en ervaringen blootgesteld
+         worden. We zijn gewend om onze poezen op te pakken en ze (fysieke) aandacht te geven.<br/>
+         Dit geeft de kittens een uitstekende basis om verder op door te groeien.</p>
 
-      <p class="font-semibold">De prijs van een kitten is €&nbsp;950 euro en ze vertrekken vanaf rond de veertiende week.</p>
+      <p class="font-semibold">
+        De prijs van een kitten is €&nbsp;950 euro en ze vertrekken vanaf rond de veertiende week.
+      </p>
 
       <h3>Wat zit er allemaal bij de prijs van een kitten?</h3>
       <ul class="list-disc">
         <li>Beide ouders zijn getest op erfelijke ziektes die bekend zijn bij het ras. Hier vallen onder andere onder:
-          HCM, PKD en CIN (echo & DNA). Ook zijn de ouders FiV en FeLV vrij.
+            HCM, PKD en CIN (echo & DNA). Ook zijn de ouders FiV en FeLV vrij.
         </li>
         <li>De kittens worden twee keer ingeënt en zijn hiermee volledig beschermd tot hun eerste levensjaar.</li>
         <li>Kittens zijn ontwormd, ontvlooit en gechipt.</li>
@@ -40,28 +43,37 @@
     </div>
   </div>
 
-  <div class="bg-orange text-white">
-    <div class="container px-2 sm:px-16 lg:px-24 lg:px-48 py-28">
+  <div class="bg-orange text-white flex justify-center">
+    <div class="px-8 lg:px-0 py-28 max-w-screen-md">
       <h3 class="text-white mt-0 mb-12">Goed om te weten</h3>
       <ul class="list-disc">
-        <li>De meeste katten zijn liever niet alleen en hebben behoefte aan een soortgenoot om mee te spelen. Als u bij
+        <li>
+          De meeste katten zijn liever niet alleen en hebben behoefte aan een soortgenoot om mee te spelen. Als u bij
           ons twee kittens uit hetzelfde nest koopt, krijgt u voorrang op de wachtlijst en € 100 korting.
         </li>
-        <li>Mocht u al een kitten van ons hebben en later voor een tweede terug komen, dan krijgt u € 50 korting.</li>
-        <li>Kittens mogen pas na hun Rabiës-inenting naar het buitenland verhuizen. Hierdoor kunnen zij pas 3 weken
-          later vertrekken. De kosten voor een Rabiës-inenting (à € 15) komen voor de rekening van de nieuwe eigenaar.
+        <li>
+          Mocht u al een kitten van ons hebben en later voor een tweede terug komen, dan krijgt u € 50 korting.
         </li>
-        <li>Kittens kunnen bezocht worden vanaf week 5, vanaf dan is hun afweersysteem namelijk goed genoeg
-          ontwikkeld.<br />
+        <li>
+          Kittens mogen pas na hun Rabiës-inenting naar het buitenland verhuizen. Hierdoor kunnen zij pas 3 weken later
+          vertrekken. De kosten voor een Rabiës-inenting (à € 15) komen voor de rekening van de nieuwe eigenaar.
+        </li>
+        <li>
+          Kittens kunnen bezocht worden vanaf week 5, vanaf dan is hun afweersysteem namelijk goed genoeg ontwikkeld.
+          <br/>
           <b>Let op:</b> Plan nooit meer dan één catterybezoek op dezelfde dag. Zo voorkom je dat je eventuele ziektes
           verspreidt.
         </li>
-        <li>Tussendoor bezoek is alleen mogelijk in week 8 en 10.</li>
-        <li>Als u op bezoek bent geweest en een kitten wilt reserveren kan dat middels een aanbetaling van € 200
-          gedaan. Deze aanbetaling wordt niet teruggestort bij eventuele annulering.
+        <li>
+          Tussendoor bezoek is alleen mogelijk in week 8 en 10.
         </li>
-        <li>Op het moment dat u het kitten op komt halen wordt er door beide partijen een koopcontract ondertekend. Wilt
-          u dit niet ondertekenen dan wordt het kitten niet aan u meegegeven. U mag altijd het contract opvragen om door
+        <li>
+          Als u op bezoek bent geweest en een kitten wilt reserveren kan dat middels een aanbetaling van € 200 gedaan.
+          Deze aanbetaling wordt niet teruggestort bij eventuele annulering.
+        </li>
+        <li>
+          Op het moment dat u het kitten op komt halen wordt er door beide partijen een koopcontract ondertekend. Wilt u
+          dit niet ondertekenen dan wordt het kitten niet aan u meegegeven. U mag altijd het contract opvragen om door
           te lezen voordat u de aanbetaling en definitieve betaling doet.
         </li>
       </ul>
@@ -70,10 +82,8 @@
 
   <div class="grid place-content-center text-center bg-beige py-16">
     <h2 class="mt-0">Nog vragen?</h2>
-    <a
-      href="/contact"
-      class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap"
-    >
+    <a href="/contact"
+       class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap">
       Contact
     </a>
   </div>

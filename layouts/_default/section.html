@@ -8,7 +8,7 @@
     {{ range .Paginator.Pages }}
 
     {{ with .Resources.GetMatch "photo" }}
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
     {{ end }}
 
     <h2>{{ .Title }}</h2>

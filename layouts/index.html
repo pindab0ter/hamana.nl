@@ -1,56 +1,74 @@
 {{ define "main" }}
-<article class="bg-beige -mb-1 pb-1">
-    <img src="/photos/yuki-basking-bed-ginny-washing-in-bg.webp" alt="Yuki basking in the sun on bed" class="w-full aspect-video lg:aspect-[21/9] object-cover object-top" style="object-position: 100% 7%" />
+<article class="bg-beige -mb-1 pb-1 flex justify-center">
+  <div class="max-w-screen-xl lg:mt-16 mb-16">
+    <img src="/photos/yuki-basking-bed-ginny-washing-in-bg.webp"
+         alt="Yuki basking in the sun on bed"
+         class="w-full aspect-video lg:aspect-[21/9] object-cover object-top"
+         style="object-position: 100% 7%"/>
 
     <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="p-12 lg:py-48 lg:px-24 lg:px-36">
+      <div class="p-12 lg:py-48 lg:px-24 lg:px-36">
 
-            <h1 class="mb-8 text-start">Over ons</h1>
-            <p>Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens.</p>
+        <h1 class="mb-8 text-start">
+          Over ons
+        </h1>
+        <p>
+          Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde
+          kittens.
+        </p>
 
-            <div class="mt-16 -ml-4 flex flex-wrap">
-                <a href="/nieuws" class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap">
-                    Het laatste nieuws
-                </a>
+        <div class="mt-16 -ml-4 flex flex-wrap">
+          <a href="/nieuws"
+             class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap">
+            Het laatste nieuws
+          </a>
 
-                <a href="/kittens/" class="text-orange hover:bg-orange hover:text-white transition font-light py-3 px-4 border border-orange rounded-full m-2">
-                    Kittens
-                </a>
-            </div>
+          <a href="/kittens/"
+             class="text-orange hover:bg-orange hover:text-white transition font-light py-3 px-4 border border-orange rounded-full m-2">
+            Kittens
+          </a>
         </div>
+      </div>
 
-        <div class="hidden lg:flex bg-white content-center">
-            <img src="/logo-text.webp" alt="Cattery Hamana" class="object-contain" />
-        </div>
+      <div class="hidden lg:flex bg-white content-center">
+        <img src="/logo-text.webp" alt="Cattery Hamana" class="object-contain"/>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3">
-        <div class="aspect-video lg:aspect-square bg-cover bg-right bg-[position-x:40%]" style="background-image: url('/photos/yuki-ginny-balcony.webp'); background-position-x: 40%;">
-            <div class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs">
-                <a href="/faq/" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
-                    Veelgestelde vragen
-                </a>
-            </div>
+      <div class="aspect-video lg:aspect-square bg-cover bg-right bg-[position-x:40%]"
+           style="background-image: url('/photos/yuki-ginny-balcony.webp'); background-position-x: 40%;">
+        <div class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs">
+          <a href="/faq/"
+             class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
+            Veelgestelde vragen
+          </a>
         </div>
+      </div>
 
-        <div class="aspect-video lg:aspect-square bg-cover" style="background-image: url('/photos/ginny-kitten.webp');">
-            <div class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs">
-                <a href="/kittens/" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
-                    Kittens
-                </a>
-            </div>
+      <div class="aspect-video lg:aspect-square bg-cover" style="background-image: url('/photos/ginny-kitten.webp');">
+        <div class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs">
+          <a href="/kittens/"
+             class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
+            Kittens
+          </a>
         </div>
+      </div>
 
-        <div class="aspect-video lg:aspect-square bg-cover bg-[center_top_50%]" style="background-image: url('/photos/yuki-ginny-together-on-bed.webp');">
-            <div class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs">
-                <a href="/onze-poezen/" class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
-                    Onze poezen
-                </a>
-            </div>
+      <div class="aspect-video lg:aspect-square bg-cover bg-[center_top_50%]"
+           style="background-image: url('/photos/yuki-ginny-together-on-bed.webp');">
+        <div class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs">
+          <a href="/onze-poezen/"
+             class="text-white hover:bg-white hover:text-current transition font-light py-2 px-4 border-2 border-white rounded-full">
+            Onze poezen
+          </a>
         </div>
+      </div>
     </div>
 
     {{- partial "components/contact-form.html" -}}
 
+  </div>
 </article>
 {{ end }}
+

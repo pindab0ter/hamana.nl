@@ -1,12 +1,10 @@
 {{ define "main" }}
 <main class="bg-beige lg:pb-16">
-  <div class="text-white flex w-full aspect-square lg:aspect-auto lg:h-48">
-    <div class="absolute aspect-square lg:aspect-auto w-full lg:h-48">
-      <img
-        src="/photos/yuki-ginny-close-up.webp"
+  <div class="text-white flex w-full aspect-square lg:aspect-auto h-48">
+    <div class="absolute aspect-auto w-full h-48">
+      <img src="/photos/yuki-ginny-close-up.webp"
         alt="Yuki and Ginny close up"
-        class="h-full w-full object-cover z-0"
-      />
+        class="h-full w-full object-cover z-0"/>
     </div>
     <div class="z-10 w-full h-full grid place-content-center text-center bg-stone-800/25 backdrop-blur-xs">
       <h1 class="text-white">
@@ -19,11 +17,12 @@
     </div>
   </div>
 
-  <div class="pt-16 bg-white lg:bg-inherit lg:grid lg:grid-cols-2 lg:mx-24 xl:mx-48">
+  <div class="pt-16 bg-white lg:bg-inherit flex justify-center">
+    <div class="lg:grid lg:grid-cols-2 max-w-screen-xl">
     {{ range sort .Paginator.Pages.Reverse }}
         <div class="lg:hidden">
           {{ with .Resources.GetMatch "photo" }}
-          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="px-2 h-fit w-full aspect-square object-cover" />
+          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
           {{ end }}
           <div class="py-14">
             <h2 class="text-center mt-0">{{ .Title }}</h2>

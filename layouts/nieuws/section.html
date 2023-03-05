@@ -1,37 +1,46 @@
 {{ define "main" }}
-<main class="bg-beige lg:pb-16">
-  <div class="text-center pt-4 pb-12">
-    {{ .Content }}
-  </div>
-  <div>
-    {{ range .Paginator.Pages }}
-
-    <div class="bg-white lg:hidden">
-      {{ with .Resources.GetMatch "photo" }}
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-full w-full object-cover" />
-      {{ end }}
-      <div class="py-14">
-        <h2 class="text-center mt-4">{{ .Title }}</h2>
-        <p class="text-center text-lg font-serif mb-4">{{ .Date | time.Format ":date_long" }}</p>
-        <div class="px-6 text-center">{{ .Content }}</div>
-      </div>
+<main class="bg-beige lg:pb-16 flex justify-center">
+  <div class="max-w-screen-xl">
+    <div class="text-center pt-4 pb-12">
+      {{ .Content }}
     </div>
+    <div class="max-w-screen-xl">
+      {{ range .Paginator.Pages }}
 
-    <div class="hidden lg:grid bg-white grid-cols-2 mx-16 mb-10 last:mb-0">
-      <div class="px-8 grid content-center">
-        <div>
-          <h2 class="text-center">{{ .Title }}</h2>
+      <div class="bg-white lg:hidden">
+        {{ with .Resources.GetMatch "photo" }}
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-full w-full object-cover"/>
+        {{ end }}
+        <div class="py-14">
+          <h2 class="text-center mt-4">{{ .Title }}</h2>
           <p class="text-center text-lg font-serif mb-4">{{ .Date | time.Format ":date_long" }}</p>
-          <div class="text-center">{{ .Content }}</div>
+          <div class="px-6 text-center">{{ .Content }}</div>
         </div>
       </div>
-      <div>
+
+      <div class="hidden lg:grid bg-white grid-cols-2 mx-16 mb-10 last:mb-0">
+        <div class="px-8 grid content-center">
+          <div>
+            <h2 class="text-center">
+              {{ .Title }}
+            </h2>
+
+            <p class="text-center text-lg font-serif mb-4">
+              {{ .Date | time.Format ":date_long" }}
+            </p>
+
+            <div class="text-center">
+              {{ .Content }}
+            </div>
+          </div>
+        </div>
+
         {{ with .Resources.GetMatch "photo" }}
-        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" />
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover"/>
         {{ end }}
       </div>
+      {{ end }}
     </div>
-    {{ end }}
   </div>
 </main>
 {{ end }}

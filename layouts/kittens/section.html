@@ -1,56 +1,43 @@
 {{ define "main" }}
 <main>
-  <div class="md:grid md:grid-cols-2 md:px-20 md:py-16 bg-beige">
-    <img
-      src="/photos/kittens-avatar.webp"
-      alt="Avatarkittens"
-      class="lg:hidden w-full h-full object-cover"
-    >
-    <div class="flex flex-col place-content-center px-8 lg:px-16 py-16">
-      <h1 class="mb-4 mt-0">De kittens van Hamana</h1>
-      <p class="font-serif mb-10">Gefokt met liefde en kennis</p>
-      <div class="block">
-        <a
-          href="/nieuws"
-          class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full whitespace-nowrap"
-        >
-          Het laatste nieuws
-        </a>
+  <div class="bg-beige flex justify-center">
+    <div class="grid grid-cols-2">
+      <div class="flex flex-col place-content-center px-10 lg:px-16 py-16">
+        <h1 class="mb-4 mt-0">De kittens van Hamana</h1>
+        <p class="font-serif mb-10">Gefokt met liefde en kennis</p>
+
+        <div class="block">
+          <a href="/nieuws"
+             class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full whitespace-nowrap">
+            Het laatste nieuws
+          </a>
+        </div>
       </div>
+
+      <img src="/photos/kittens-avatar.webp"
+           alt="Avatarkittens"
+           class="w-full h-full object-cover">
     </div>
-    <img
-      src="/photos/kittens-avatar.webp"
-      alt="Avatarkittens"
-      class="hidden lg:block w-full h-full object-cover"
-    >
   </div>
 
   {{ range .Paginator.Pages }}
+  <div class="flex justify-center">
+    <div class="mx-16 mb-10">
+      <div class="px-8 content-center">
 
-  <div class="bg-white lg:hidden">
-    {{ with .Resources.GetMatch "photo" }}
-    <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-full w-full object-cover" />
-    {{ end }}
-    <div class="py-14">
-      <div class="px-6 text-center">{{ .Content }}</div>
-    </div>
-  </div>
+        {{ with .Resources.GetMatch "photo" }}
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover mt-16 mb-8"/>
+        {{ end }}
 
-  <div class="mx-16 mb-10">
-    <div class="px-8 grid content-center">
-      <div>
-        <h2 class="text-center">{{ .Title }}</h2>
-        <p class="text-center text-lg font-serif mb-4">{{ .Date | time.Format ":date_long" }}</p>
-        <div class="text-center">{{ .Content }}</div>
+        <p class="text-center text-lg font-serif mb-6">
+          {{ .Date | time.Format ":date_long" }}
+        </p>
+        <div class="text-center">
+          {{ .Content }}
+        </div>
       </div>
-    </div>
-    <div class="mt-16">
-      {{ with .Resources.GetMatch "photo" }}
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" />
-      {{ end }}
     </div>
   </div>
   {{ end }}
-  </div>
 </main>
 {{ end }}
