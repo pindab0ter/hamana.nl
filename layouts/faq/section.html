@@ -1,32 +1,36 @@
 {{ define "main" }}
 <main>
-  <div class="lg:grid lg:grid-cols-2 lg:px-24 lg:py-16 bg-beige">
-    <img src="/photos/yuki-ginny-balcony.webp" alt="Yuki and Ginny in the balcony" class="w-full h-full object-cover">
-    <div
-      class="grid place-content-center text-center"
-    >
-      <div class="relative inline-flex justify-center mt-16 lg:mt-8">
-        <h1
-          class="mt-0 z-20"
-        >
-          <abbr title="Frequently Asked Questions">
-            FAQ
-          </abbr>
-        </h1>
+  <div class="bg-beige flex justify-center">
+    <div class="lg:grid lg:grid-cols-2 lg:px-24 max-w-screen-xl">
+      <img src="/photos/yuki-ginny-balcony.webp"
+           alt="Yuki and Ginny in the balcony"
+           class="w-full h-full object-cover">
+      <div class="grid place-content-center text-center">
+        <div class="relative inline-flex justify-center mt-16 lg:mt-8">
+          <h1 class="mt-0 z-20">
+            <abbr title="Frequently Asked Questions">
+              FAQ
+            </abbr>
+          </h1>
+        </div>
 
+        <p class="font-serif mb-16">Veelgestelde vragen</p>
       </div>
-      <p class="font-serif mb-16">Veelgestelde vragen</p>
     </div>
   </div>
-  <div class="container px-2 sm:px-16 lg:px-24 lg:px-48 mb-16">
-    {{ partial "headline-hash.html" .Content }}
+
+  <div class="flex justify-center">
+    <div class="max-w-screen-md">
+      <div class="px-2 sm:px-16 mb-16">
+        {{ partial "headline-hash.html" .Content }}
+      </div>
+    </div>
   </div>
+
   <div class="grid place-content-center text-center bg-beige py-16">
     <h2 class="mt-0">Nog vragen?</h2>
-    <a
-      href="/contact"
-      class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap"
-    >
+    <a href="/contact"
+       class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full m-2 whitespace-nowrap">
       Contact
     </a>
   </div>
