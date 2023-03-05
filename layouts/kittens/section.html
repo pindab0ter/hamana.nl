@@ -1,28 +1,6 @@
 {{ define "main" }}
 <main>
-  <div class="bg-beige">
-    <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
-      <img src="/photos/kittens-avatar.webp"
-           alt="Avatarkittens"
-           class="lg:hidden w-full aspect-[21/9] object-cover"
-           style="object-position: 100% 50%">
-      <div class="flex flex-col place-content-center px-10 lg:px-16 py-16">
-        <h1 class="mb-4 mt-0">De kittens van Hamana</h1>
-        <p class="font-serif mb-10">Gefokt met liefde en kennis</p>
-
-        <div class="block">
-          <a href="/nieuws"
-             class="bg-orange text-white hover:bg-orange/75 transition font-light py-3 px-4 rounded-full whitespace-nowrap">
-            Het laatste nieuws
-          </a>
-        </div>
-      </div>
-
-      <img src="/photos/kittens-avatar.webp"
-           alt="Avatarkittens"
-           class="hidden lg:block w-full h-full object-cover">
-    </div>
-  </div>
+  {{ .Content }}
 
   {{ range .Paginator.Pages }}
   <div class="flex justify-center">

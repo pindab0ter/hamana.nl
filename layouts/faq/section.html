@@ -1,24 +1,5 @@
 {{ define "main" }}
 <main>
-  <div class="bg-beige flex justify-center">
-    <div class="lg:grid lg:grid-cols-2 lg:px-24 max-w-screen-xl">
-      <img src="/photos/yuki-ginny-balcony.webp"
-           alt="Yuki and Ginny in the balcony"
-           class="w-full h-full object-cover">
-      <div class="grid place-content-center text-center">
-        <div class="relative inline-flex justify-center mt-16 lg:mt-8">
-          <h1 class="mt-0 z-20">
-            <abbr title="Frequently Asked Questions">
-              FAQ
-            </abbr>
-          </h1>
-        </div>
-
-        <p class="font-serif mb-16">Veelgestelde vragen</p>
-      </div>
-    </div>
-  </div>
-
   {{ partial "headline-hash" .Content }}
 
   {{ partial "contact-button" }}

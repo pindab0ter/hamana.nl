@@ -1,22 +1,5 @@
 {{ define "main" }}
 <main>
-  <div class="bg-beige">
-    <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
-      <img src="/photos/ginny-kitten.webp"
-           alt="Yuki and Ginny in the balcony"
-           class="lg:hidden w-full aspect-[21/9] object-cover"
-           style="object-position: 100% 12%">
-      <div class="grid place-content-center lg:px-16">
-        <h1 class="my-16 lg:my-0">Ons kittenbeleid</h1>
-      </div>
-
-      <img src="/photos/ginny-kitten.webp"
-           alt="Yuki and Ginny in the balcony"
-           class="hidden lg:block w-full aspect-square object-cover"
-           style="object-position: 100% 0">
-    </div>
-  </div>
-
   {{ .Content }}
 
   {{ partial "contact-button" }}
