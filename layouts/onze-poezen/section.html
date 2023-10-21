@@ -2,11 +2,13 @@
   <main class="bg-beige lg:pb-16">
     <div class="flex aspect-square h-48 w-full text-white lg:aspect-auto">
       <div class="absolute aspect-auto h-48 w-full">
-        <img
-          src="/photos/yuki-ginny-close-up.webp"
-          alt="Yuki and Ginny close up"
-          class="z-0 h-full w-full object-cover"
-        />
+        {{ with (resources.Get "photos/yuki-ginny-close-up.jpg").Process "webp" }}
+          <img
+            src="{{ .RelPermalink }}"
+            alt="Yuki and Ginny close up"
+            class="z-0 h-full w-full object-cover"
+          />
+        {{ end }}
       </div>
 
       <div
