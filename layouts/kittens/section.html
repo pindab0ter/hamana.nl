@@ -1,6 +1,38 @@
 {{ define "main" }}
   <main>
-    {{ .Content }}
+    <div class="bg-beige">
+      <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
+        {{ with resources.Get "photos/kittens-avatar.webp" }}
+          <img
+            src="{{ .RelPermalink }}"
+            alt="De Avatarkittensk"
+            class="aspect-[21/9] w-full object-cover lg:hidden"
+          />
+
+          <div class="grid place-content-center lg:px-16">
+            <div class="py-20 lg:text-end">
+              <h1 class="mt-0">De kittens van Hamana</h1>
+              <p class="font-serif">Gefokt met liefde en kennis</p>
+
+              <div class="block">
+                <a
+                  href="/nieuws"
+                  class="whitespace-nowrap rounded-full bg-orange px-4 py-3 font-light text-white transition hover:bg-orange/75"
+                >
+                  Het laatste nieuws
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <img
+            src="{{ .RelPermalink }}"
+            alt="De Avatarkittensk"
+            class="hidden aspect-[16/9] w-full object-cover lg:block"
+          />
+        {{ end }}
+      </div>
+    </div>
 
     {{ range .Paginator.Pages }}
       <div class="flex justify-center">
