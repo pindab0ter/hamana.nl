@@ -4,7 +4,7 @@
   >
     <a href="/">
       <div class="flex-column lg:flex lg:items-center">
-        {{ with (resources.GetMatch "logo-cats.png").Process "webp drawing" }}
+        {{ with (resources.Get "logo-cats.png").Process "webp drawing" }}
           <img
             src="{{ .RelPermalink }}"
             alt="Cattery Hamana"
