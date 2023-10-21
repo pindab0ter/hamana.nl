@@ -2,7 +2,7 @@
   <main>
     <div class="bg-beige">
       <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
-        {{ with (resources.Get "photos/yuki-ginny-balcony.png").Process "webp" }}
+        {{ with (resources.Get "photos/yuki-ginny-balcony.png").Process "resize 640x webp" }}
           <img
             src="{{ .RelPermalink }}"
             alt="Yuki en Ginny op het balkon"

@@ -39,7 +39,7 @@
         <div class="flex flex-col">
           {{ with .Resources.Get "photo" }}
             <img
-              src="{{ (.Process "webp drawing").RelPermalink }}"
+              src="{{ (.Process "resize 512x webp drawing").RelPermalink }}"
               alt="{{ .Title }}"
               class="mx-auto mb-8 mt-16 h-full w-full object-cover lg:max-w-lg"
             />

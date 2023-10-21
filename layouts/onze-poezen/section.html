@@ -2,7 +2,7 @@
   <main class="bg-beige lg:pb-16">
     <div class="flex aspect-square h-48 w-full text-white lg:aspect-auto">
       <div class="absolute aspect-auto h-48 w-full">
-        {{ with (resources.Get "photos/yuki-ginny-close-up.jpg").Process "webp" }}
+        {{ with (resources.Get "photos/yuki-ginny-close-up.jpg").Process "resize 1024x webp" }}
           <img
             src="{{ .RelPermalink }}"
             alt="Yuki and Ginny close up"
@@ -24,7 +24,7 @@
       <div class="max-w-screen-xl lg:grid lg:grid-cols-2">
         {{ range sort .Paginator.Pages.Reverse }}
           <div class="lg:hidden">
-            {{ with (.Resources.Get "photo").Process "webp" }}
+            {{ with (.Resources.Get "photo").Process "resize 576x webp" }}
               <img
                 src="{{ .RelPermalink }}"
                 alt="{{ .Title }}"
@@ -43,7 +43,7 @@
 
           <div class="mx-8 mb-10 hidden h-full bg-white lg:block">
             <div>
-              {{ with (.Resources.Get "photo").Process "webp" }}
+              {{ with (.Resources.Get "photo").Process "resize 576x webp" }}
                 <img
                   src="{{ .RelPermalink }}"
                   alt="{{ .Title }}"

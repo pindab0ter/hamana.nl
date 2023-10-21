@@ -1,25 +1,17 @@
 <div class="grid grid-cols-1 bg-white lg:grid-cols-2">
-  {{ if .showPictureMobile }}
-    {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
-      <div class="mb-16 mt-8 flex content-center bg-white lg:hidden">
-        <img
-          src="{{ .RelPermalink }}"
-          alt="Yuki and Ginny looking outside from the balcony together"
-          class="w-100 aspect-[16/9] object-cover"
-          style="object-position: 100% 30%"
-        />
-      </div>
-    {{ end }}
+  {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
+    <div class="mb-16 mt-8 flex content-center bg-white lg:hidden">
+      <img
+        src="{{ .RelPermalink }}"
+        alt="Yuki and Ginny looking outside from the balcony together"
+        class="w-100 aspect-[16/9] object-cover"
+        style="object-position: 100% 30%"
+      />
+    </div>
   {{ end }}
 
 
-  <div
-    class="{{ if (not .showPictureMobile) }}
-      py-24
-    {{ else }}
-      pb-24
-    {{ end }}lg:px-10 lg:px-20"
-  >
+  <div class=" pb-24 lg:px-10 lg:px-20">
     <h1 class="mt-0 text-center">Contact</h1>
     <div class="flex justify-center">
       <div class="mx-2 h-5 w-5">
@@ -87,7 +79,7 @@
   </div>
 
   <div class="hidden content-center bg-white lg:flex">
-    {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
+    {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "resize 640x fit webp" }}
       <img
         src="{{ .RelPermalink }}"
         alt="Yuki and Ginny looking outside from the balcony together"

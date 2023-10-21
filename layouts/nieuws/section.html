@@ -11,7 +11,7 @@
           <div class="bg-white lg:hidden">
             {{ with .Resources.Get "photo" }}
               <img
-                src="{{ (.Process "webp").RelPermalink }}"
+                src="{{ (.Process "resize 576x webp").RelPermalink }}"
                 alt="{{ .Title }}"
                 class="h-full w-full object-cover"
               />
@@ -46,7 +46,7 @@
 
             {{ with .Resources.Get "photo" }}
               <img
-                src="{{ .RelPermalink }}"
+                src="{{ (.Process "resize 576x webp").RelPermalink }}"
                 alt="{{ .Title }}"
                 class="h-full w-full object-cover"
               />
