@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Content }}
   <article class="-mb-1 flex justify-center bg-beige pb-1">
-    <div class="max-w-screen-xl lg:my-24">
+    <div class="max-w-screen-xl lg:mb-24">
       {{ with (resources.GetMatch "photos/yuki-basking-bed-ginny-washing-in-bg.jpg").Process "webp" }}
         <img
           src="{{ .RelPermalink }}"
