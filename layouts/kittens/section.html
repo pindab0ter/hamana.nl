@@ -2,7 +2,7 @@
   <main>
     <div class="bg-beige">
       <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
-        {{ with resources.Get "photos/kittens-avatar.webp" }}
+        {{ with (resources.Get "photos/avatar-kittens-groep.jpg").Process "resize 640x webp" }}
           <img
             src="{{ .RelPermalink }}"
             alt="De Avatarkittensk"

@@ -2,12 +2,12 @@
   <main>
     <div class="bg-beige">
       <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
-        {{ with (resources.Get "photos/ginny-kitten.jpg").Process "webp" }}
+        {{ with (resources.Get "photos/avatar-kitten-portret.jpg").Process "webp" }}
           <img
             src="{{ .RelPermalink }}"
             alt="Jonge Ginny"
             class="aspect-[21/9] w-full object-cover lg:hidden"
-            style="object-position: 100% 12%"
+            style="object-position: 100% 28%"
           />
 
           <div class="grid place-content-center lg:px-16">
@@ -18,7 +18,7 @@
             src="{{ .RelPermalink }}"
             alt="Jonge Ginny"
             class="hidden aspect-[16/9] w-full object-cover lg:block"
-            style="object-position: 100% 12%"
+            style="object-position: 100% 24%"
           />
         {{ end }}
       </div>
