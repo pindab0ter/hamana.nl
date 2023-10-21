@@ -2,7 +2,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./layouts/**/*.html', './content/**/*.{md,html}'],
+  content: [
+    './layouts/**/*.html',
+    './content/**/*.{md,html}'
+  ],
   theme: {
     container: {
       center: true,

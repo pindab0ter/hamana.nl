@@ -19,9 +19,9 @@
 <meta property="og:url" content="https://hamana.nl">
 <meta property="og:type" content="website">
 {{ if .IsHome }}
-    <meta property="og:title" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ .Site.Title }}">
 {{ else }}
-    <meta property="og:title" content="{{ .Site.Title }} | {{ .Title }}">
+  <meta property="og:title" content="{{ .Site.Title }} | {{ .Title }}">
 {{ end }}
 <meta property="og:locale" content="nl_NL" />
 <meta property="og:description" content="{{ .Site.Params.description }}">
@@ -34,9 +34,9 @@
 <meta property="twitter:domain" content="hamana.nl">
 <meta property="twitter:url" content="https://hamana.nl">
 {{ if .IsHome }}
-    <meta name="twitter:title" content="{{ .Site.Title }}">
+  <meta name="twitter:title" content="{{ .Site.Title }}">
 {{ else }}
-    <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Title }}">
+  <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Title }}">
 {{ end }}
 <meta name="twitter:description" content="{{ .Site.Params.description }}">
 <meta name="twitter:image" content="https://hamana.nl/logo-text.png">
@@ -61,34 +61,34 @@
 {{ $sass := resources.Get "style.scss" }}
 {{ $style := $sass | resources.ToCSS | resources.PostCSS }}
 {{ if .Site.IsServer }}
-    {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
-    {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
-    {{ $style := $style | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) $random }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
+  {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+  {{ $style := $style | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) $random }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 {{ else }}
-    {{ $style := $style | minify | fingerprint | resources.PostProcess }}
-    <link
-      data-precache
-      rel="stylesheet"
-      href="{{ $style.RelPermalink }}"
-      integrity="{{ $style.Data.Integrity }}"
-      crossorigin="anonymous"
-    />
+  {{ $style := $style | minify | fingerprint | resources.PostProcess }}
+  <link
+    data-precache
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+    crossorigin="anonymous"
+  />
 {{ end }}
 
 {{ $ts := resources.Get "app.ts" }}
 {{ if .Site.IsServer }}
-    {{ $script := $ts | js.Build }}
-    <script data-precache src="{{ $script.Permalink }}" defer></script>
+  {{ $script := $ts | js.Build }}
+  <script data-precache src="{{ $script.Permalink }}" defer></script>
 {{ else }}
-    {{ $script := $ts | js.Build (dict "minify" true) | resources.Minify | fingerprint }}
-    <script
-      data-precache
-      src="{{ $script.Permalink }}"
-      integrity="{{ $script.Data.Integrity }}"
-      crossorigin="anonymous"
-      defer
-    ></script>
+  {{ $script := $ts | js.Build (dict "minify" true) | resources.Minify | fingerprint }}
+  <script
+    data-precache
+    src="{{ $script.Permalink }}"
+    integrity="{{ $script.Data.Integrity }}"
+    crossorigin="anonymous"
+    defer
+  ></script>
 {{ end }}
 
 {{ if not .Site.IsServer }}
