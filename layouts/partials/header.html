@@ -4,11 +4,15 @@
   >
     <a href="/">
       <div class="flex-column lg:flex lg:items-center">
-        <img
-          src="/logo-cats.webp"
-          alt="Cattery Hamana"
-          class="w-48 mh-24 mx-auto lg:mx-0"
-        />
+        {{ with (resources.GetMatch "logo-cats.png").Process "webp drawing" }}
+          <img
+            src="{{ .RelPermalink }}"
+            alt="Cattery Hamana"
+            class="w-48 mh-24 mx-auto lg:mx-0"
+          />
+        {{ end }}
+
+
         <div class="flex-column lg:pl-4">
           <p class="text-3xl font-extralight text-center mt-4 mb-2">
             Cattery Hamana

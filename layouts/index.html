@@ -1,12 +1,16 @@
 {{ define "main" }}
+  {{ .Content }}
   <article class="bg-beige -mb-1 pb-1 flex justify-center">
     <div class="max-w-screen-xl lg:my-24">
-      <img
-        src="/photos/yuki-basking-bed-ginny-washing-in-bg.webp"
-        alt="Yuki basking in the sun on bed"
-        class="w-full aspect-video lg:aspect-[21/9] object-cover object-top"
-        style="object-position: 100% 7%"
-      />
+      {{ with (resources.GetMatch "photos/yuki-basking-bed-ginny-washing-in-bg.jpg").Process "webp" }}
+        <img
+          src="{{ .RelPermalink }}"
+          alt="Yuki basking in the sun on bed"
+          class="w-full aspect-video lg:aspect-[21/9] object-cover object-top"
+          style="object-position: 100% 7%"
+        />
+      {{ end }}
+
 
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="p-12 lg:py-48 lg:px-24 lg:px-36">
@@ -32,18 +36,23 @@
         </div>
 
         <div class="hidden lg:flex bg-white content-center">
-          <img
-            src="/logo-text.webp"
-            alt="Cattery Hamana"
-            class="object-contain"
-          />
+          {{ with (resources.GetMatch "logo-text.png").Process "webp drawing" }}
+            <img
+              src="{{ .RelPermalink }}"
+              alt="Cattery Hamana"
+              class="object-contain"
+            />
+          {{ end }}
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3">
         <div
           class="aspect-video lg:aspect-square bg-cover bg-right bg-[position-x:40%]"
-          style="background-image: url('/photos/yuki-ginny-balcony.webp'); background-position-x: 40%;"
+          {{ with (resources.GetMatch "photos/yuki-ginny-balcony.png").Process "webp" }}
+            style="background-image: url('{{ .RelPermalink }}');
+            background-position-x: 40%;"
+          {{ end }}
         >
           <div
             class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs"
@@ -58,7 +67,9 @@
 
         <div
           class="aspect-video lg:aspect-square bg-cover"
-          style="background-image: url('/photos/ginny-kitten.webp');"
+          {{ with (resources.GetMatch "photos/ginny-kitten.jpg").Process "webp" }}
+            style="background-image: url('{{ .RelPermalink }}');"
+          {{ end }}
         >
           <div
             class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs"
@@ -73,7 +84,9 @@
 
         <div
           class="aspect-video lg:aspect-square bg-cover bg-[center_top_50%]"
-          style="background-image: url('/photos/yuki-ginny-together-on-bed.webp');"
+          {{ with (resources.GetMatch "photos/yuki-ginny-together-on-bed.jpg").Process "webp" }}
+            style="background-image: url('{{ .RelPermalink }}');"
+          {{ end }}
         >
           <div
             class="grid place-content-center h-full w-full bg-orange/75 backdrop-blur-xs"

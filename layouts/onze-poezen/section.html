@@ -8,6 +8,7 @@
           class="h-full w-full object-cover z-0"
         />
       </div>
+
       <div
         class="z-10 w-full h-full grid place-content-center text-center bg-stone-800/25 backdrop-blur-xs"
       >
@@ -21,7 +22,7 @@
       <div class="lg:grid lg:grid-cols-2 max-w-screen-xl">
         {{ range sort .Paginator.Pages.Reverse }}
           <div class="lg:hidden">
-            {{ with .Resources.GetMatch "photo" }}
+            {{ with (.Resources.Get "photo").Process "webp" }}
               <img
                 src="{{ .RelPermalink }}"
                 alt="{{ .Title }}"
@@ -40,7 +41,7 @@
 
           <div class="hidden lg:block bg-white h-full mx-8 mb-10">
             <div>
-              {{ with .Resources.GetMatch "photo" }}
+              {{ with (.Resources.Get "photo").Process "webp" }}
                 <img
                   src="{{ .RelPermalink }}"
                   alt="{{ .Title }}"
@@ -48,6 +49,7 @@
                 />
               {{ end }}
             </div>
+
             <div class="px-8">
               <div>
                 <h2>{{ .Title }}</h2>

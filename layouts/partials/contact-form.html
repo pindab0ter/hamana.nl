@@ -1,13 +1,15 @@
 <div class="bg-white grid grid-cols-1 lg:grid-cols-2">
   {{ if .showPictureMobile }}
-    <div class="flex lg:hidden bg-white mt-8 mb-16 content-center">
-      <img
-        src="/photos/yuki-ginny-balcony-looking-outside-together.webp"
-        alt="Yuki and Ginny looking outside from the balcony together"
-        class="object-cover w-100 aspect-[16/9]"
-        style="object-position: 100% 30%"
-      />
-    </div>
+    {{ with (resources.GetMatch "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp drawing" }}
+      <div class="flex lg:hidden bg-white mt-8 mb-16 content-center">
+        <img
+          src="{{ .RelPermalink }}"
+          alt="Yuki and Ginny looking outside from the balcony together"
+          class="object-cover w-100 aspect-[16/9]"
+          style="object-position: 100% 30%"
+        />
+      </div>
+    {{ end }}
   {{ end }}
 
 
@@ -85,10 +87,12 @@
   </div>
 
   <div class="hidden lg:flex bg-white content-center">
-    <img
-      src="/photos/yuki-ginny-balcony-looking-outside-together.webp"
-      alt="Yuki and Ginny looking outside from the balcony together"
-      class="object-cover"
-    />
+    {{ with (resources.GetMatch "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp drawing" }}
+      <img
+        src="{{ .RelPermalink }}"
+        alt="Yuki and Ginny looking outside from the balcony together"
+        class="object-cover"
+      />
+    {{ end }}
   </div>
 </div>

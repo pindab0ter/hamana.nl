@@ -47,9 +47,13 @@ description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich 
 [imaging]
 anchor = 'Smart'
 bgColor = '#ffffff'
+quality = 85
 hint = 'photo'
-quality = 75
-resampleFilter = 'Box'
+resampleFilter = 'Lanczos'
+
+[imaging.exif]
+disableDate = false
+disableLatLong = true
 
 # Umami configuration
 # https://umami.is/docs/install

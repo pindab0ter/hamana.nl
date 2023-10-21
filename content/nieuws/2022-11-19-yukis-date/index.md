@@ -1,11 +1,11 @@
-+++
-title = "Yuki’s date"
-date = 2022-11-19
-[[resources]]
-name = "photo"
-title = "Yuki en Ties"
-src = "yuki-en-ties.webp"
-+++
+---
+title: Yuki’s date
+date: 2022-11-19
+resources:
+  - name: photo
+    title: Yuki en Ties
+    src: yuki-en-ties.png
+---
 
 Na drie keer op en neer rijden naar Reek, is het toch eindelijk gelukt tussen Yuki en Ties (Famous Fellow Floris van 't
 Reekschebos). Ties is een enorm lieve blue tabby Ragdoll kater met een prachtige vacht. Hij heeft in het verleden al
