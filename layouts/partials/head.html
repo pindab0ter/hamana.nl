@@ -10,36 +10,9 @@
 {{ end }}
 <meta name="description" content="{{ .Site.Params.description }}" />
 
-<!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="{{ .Site.Title }}" />
-<meta itemprop="description" content="{{ .Site.Params.description }}" />
-<meta itemprop="image" content="https://hamana.nl/logo-text.png" />
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
 
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://hamana.nl" />
-<meta property="og:type" content="website" />
-{{ if .IsHome }}
-  <meta property="og:title" content="{{ .Site.Title }}" />
-{{ else }}
-  <meta property="og:title" content="{{ .Site.Title }} | {{ .Title }}" />
-{{ end }}
-<meta property="og:locale" content="nl_NL" />
-<meta property="og:description" content="{{ .Site.Params.description }}" />
-<meta property="og:image" content="https://hamana.nl/logo-text.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:alt" content="Cattery Hamana logo" />
-
-<!-- Twitter Meta Tags -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:domain" content="hamana.nl" />
-<meta property="twitter:url" content="https://hamana.nl" />
-{{ if .IsHome }}
-  <meta name="twitter:title" content="{{ .Site.Title }}" />
-{{ else }}
-  <meta name="twitter:title" content="{{ .Site.Title }} | {{ .Title }}" />
-{{ end }}
-<meta name="twitter:description" content="{{ .Site.Params.description }}" />
-<meta name="twitter:image" content="https://hamana.nl/logo-text.png" />
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

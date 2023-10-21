@@ -4,8 +4,17 @@ title = 'Cattery Hamana'
 defaultContentLanguage = 'nl'
 enableRobotsTXT = true
 
-[params]
-description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens."
+[Params]
+  description = "Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich inzet voor het fokken van sociale en gezonde kittens."
+
+[Params.favicons]
+  appleTouchIcon = '/apple-touch-icon.png'
+  icon32 = '/favicon-32x32.png'
+  icon16 = '/favicon-16x16.png'
+  manifest = '/site.webmanifest'
+  maskIcon = '/safari-pinned-tab.svg'
+  msApplicationTileColor = '#5bbad5'
+  themeColor = '#2B2B2B'
 
 [menu]
   [[menu.main]]
