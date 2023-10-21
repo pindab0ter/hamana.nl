@@ -1,16 +1,16 @@
 {{ define "main" }}
   <main class="bg-beige lg:pb-16">
-    <div class="text-white flex w-full aspect-square lg:aspect-auto h-48">
-      <div class="absolute aspect-auto w-full h-48">
+    <div class="flex aspect-square h-48 w-full text-white lg:aspect-auto">
+      <div class="absolute aspect-auto h-48 w-full">
         <img
           src="/photos/yuki-ginny-close-up.webp"
           alt="Yuki and Ginny close up"
-          class="h-full w-full object-cover z-0"
+          class="z-0 h-full w-full object-cover"
         />
       </div>
 
       <div
-        class="z-10 w-full h-full grid place-content-center text-center bg-stone-800/25 backdrop-blur-xs"
+        class="z-10 grid h-full w-full place-content-center bg-stone-800/25 text-center backdrop-blur-xs"
       >
         <h1 class="text-white">Onze poezen</h1>
 
@@ -18,20 +18,20 @@
       </div>
     </div>
 
-    <div class="pt-16 bg-white lg:bg-inherit flex justify-center">
-      <div class="lg:grid lg:grid-cols-2 max-w-screen-xl">
+    <div class="flex justify-center bg-white pt-16 lg:bg-inherit">
+      <div class="max-w-screen-xl lg:grid lg:grid-cols-2">
         {{ range sort .Paginator.Pages.Reverse }}
           <div class="lg:hidden">
             {{ with (.Resources.Get "photo").Process "webp" }}
               <img
                 src="{{ .RelPermalink }}"
                 alt="{{ .Title }}"
-                class="h-fit w-full aspect-square object-cover"
+                class="aspect-square h-fit w-full object-cover"
               />
             {{ end }}
             <div class="py-14">
-              <h2 class="text-center mt-0">{{ .Title }}</h2>
-              <p class="text-center text-lg font-serif mb-4">
+              <h2 class="mt-0 text-center">{{ .Title }}</h2>
+              <p class="mb-4 text-center font-serif text-lg">
                 {{ .Description }}<br />
                 {{ .Date | time.Format ":date_short" }}
               </p>
@@ -39,13 +39,13 @@
             </div>
           </div>
 
-          <div class="hidden lg:block bg-white h-full mx-8 mb-10">
+          <div class="mx-8 mb-10 hidden h-full bg-white lg:block">
             <div>
               {{ with (.Resources.Get "photo").Process "webp" }}
                 <img
                   src="{{ .RelPermalink }}"
                   alt="{{ .Title }}"
-                  class="h-fit w-full aspect-square object-cover"
+                  class="aspect-square h-fit w-full object-cover"
                 />
               {{ end }}
             </div>
@@ -53,7 +53,7 @@
             <div class="px-8">
               <div>
                 <h2>{{ .Title }}</h2>
-                <p class="text-lg font-serif mb-4">
+                <p class="mb-4 font-serif text-lg">
                   {{ .Description }}<br />
                   {{ .Date | time.Format ":date_short" }}
                 </p>

@@ -1,7 +1,7 @@
 {{ define "main" }}
-  <main class="bg-beige lg:pb-16 flex justify-center">
+  <main class="flex justify-center bg-beige lg:pb-16">
     <div class="max-w-screen-xl">
-      <div class="text-center pt-4 pb-12">
+      <div class="pb-12 pt-4 text-center">
         <h1>Nieuws</h1>
       </div>
 
@@ -17,8 +17,8 @@
               />
             {{ end }}
             <div class="py-14">
-              <h2 class="text-center mt-4">{{ .Title }}</h2>
-              <p class="text-center text-lg font-serif mb-4">
+              <h2 class="mt-4 text-center">{{ .Title }}</h2>
+              <p class="mb-4 text-center font-serif text-lg">
                 {{ .Date | time.Format ":date_long" }}
               </p>
               <div class="px-6 text-center">{{ .Content }}</div>
@@ -26,15 +26,15 @@
           </div>
 
           <div
-            class="hidden lg:grid bg-white grid-cols-2 mx-16 mb-10 last:mb-0"
+            class="mx-16 mb-10 hidden grid-cols-2 bg-white last:mb-0 lg:grid"
           >
-            <div class="px-8 grid content-center">
+            <div class="grid content-center px-8">
               <div>
                 <h2 class="text-center">
                   {{ .Title }}
                 </h2>
 
-                <p class="text-center text-lg font-serif mb-4">
+                <p class="mb-4 text-center font-serif text-lg">
                   {{ .Date | time.Format ":date_long" }}
                 </p>
 
@@ -48,7 +48,7 @@
               <img
                 src="{{ .RelPermalink }}"
                 alt="{{ .Title }}"
-                class="w-full h-full object-cover"
+                class="h-full w-full object-cover"
               />
             {{ end }}
           </div>

@@ -1,12 +1,12 @@
 {{ define "main" }}
   <main>
     <div class="bg-beige">
-      <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
+      <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
         {{ with (resources.Get "photos/ginny-kitten.jpg").Process "webp" }}
           <img
             src="{{ .RelPermalink }}"
             alt="Jonge Ginny"
-            class="lg:hidden w-full aspect-[21/9] object-cover"
+            class="aspect-[21/9] w-full object-cover lg:hidden"
             style="object-position: 100% 12%"
           />
 
@@ -17,7 +17,7 @@
           <img
             src="{{ .RelPermalink }}"
             alt="Jonge Ginny"
-            class="hidden lg:block w-full aspect-[16/9] object-cover"
+            class="hidden aspect-[16/9] w-full object-cover lg:block"
             style="object-position: 100% 12%"
           />
         {{ end }}
@@ -65,9 +65,9 @@
       </div>
     </div>
 
-    <div class="bg-orange flex justify-center py-16">
+    <div class="flex justify-center bg-orange py-16">
       <div class="max-w-screen-md px-8 lg:px-0">
-        <h3 class="text-white mt-0 mb-12">Goed om te weten</h3>
+        <h3 class="mb-12 mt-0 text-white">Goed om te weten</h3>
         <ul class="list-disc text-white">
           <li>
             De meeste katten zijn liever niet alleen en hebben behoefte aan een

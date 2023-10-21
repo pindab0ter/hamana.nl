@@ -1,28 +1,28 @@
 {{ define "main" }}
   <main>
     <div class="bg-beige">
-      <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
+      <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
         {{ with (resources.Get "photos/yuki-ginny-balcony.png").Process "webp" }}
           <img
             src="{{ .RelPermalink }}"
             alt="Yuki en Ginny op het balkon"
-            class="lg:hidden w-full aspect-[21/9] object-cover"
+            class="aspect-[21/9] w-full object-cover lg:hidden"
             style="object-position: 100% 12%"
           />
 
           <div class="grid place-content-center lg:px-16">
-            <div class="my-16 lg:mt-8 text-center">
+            <div class="my-16 text-center lg:mt-8">
               <h1 class="mt-0">
                 <abbr title="Frequently Asked Questions">FAQ</abbr>
               </h1>
-              <p class="font-serif mb-0">Veelgestelde vragen</p>
+              <p class="mb-0 font-serif">Veelgestelde vragen</p>
             </div>
           </div>
 
           <img
             src="{{ .RelPermalink }}"
             alt="Yuki en Ginny op het balkon"
-            class="hidden lg:block w-full aspect-[16/9] object-cover"
+            class="hidden aspect-[16/9] w-full object-cover lg:block"
             style="object-position: 100% 12%"
           />
         {{ end }}

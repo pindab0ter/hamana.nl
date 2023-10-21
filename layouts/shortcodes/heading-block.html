@@ -1,9 +1,9 @@
 <div class="bg-beige">
-  <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
+  <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
     <img
       src="{{ ($.Page.Resources.GetMatch "photo").RelPermalink }}"
       alt="{{ ($.Page.Resources.GetMatch "photo").Title }}"
-      class="lg:hidden w-full aspect-[21/9] object-cover"
+      class="aspect-[21/9] w-full object-cover lg:hidden"
       style="{{ .Get "imageStyle" }}"
     />
 
@@ -14,7 +14,7 @@
     <img
       src="{{ ($.Page.Resources.GetMatch "photo").RelPermalink }}"
       alt="{{ ($.Page.Resources.GetMatch "photo").Title }}"
-      class="hidden lg:block w-full aspect-[16/9] object-cover"
+      class="hidden aspect-[16/9] w-full object-cover lg:block"
       style="{{ .Get "imageStyle" }}"
     />
   </div>

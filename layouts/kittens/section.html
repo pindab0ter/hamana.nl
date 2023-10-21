@@ -9,12 +9,12 @@
             <img
               src="{{ (.Process "webp drawing").RelPermalink }}"
               alt="{{ .Title }}"
-              class="lg:max-w-lg w-full h-full object-cover mt-16 mb-8 mx-auto"
+              class="mx-auto mb-8 mt-16 h-full w-full object-cover lg:max-w-lg"
             />
           {{ end }}
 
 
-          <p class="text-center text-lg font-serif mb-6">
+          <p class="mb-6 text-center font-serif text-lg">
             {{ .Date | time.Format ":date_long" }}
           </p>
           <div class="text-center">

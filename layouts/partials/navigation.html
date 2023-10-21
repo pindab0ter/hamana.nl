@@ -1,7 +1,7 @@
-<nav class="hidden lg:flex lg:visible items-center">
+<nav class="hidden items-center lg:visible lg:flex">
   {{ $currentPage := . }}
   {{ range .Site.Menus.main }}
-    <a class="px-2 active" href="{{ .URL }}" title="{{ .Title }}"
+    <a class="active px-2" href="{{ .URL }}" title="{{ .Title }}"
       >{{ .Name }}</a
     >
   {{ end }}
@@ -25,7 +25,7 @@
 <div x-data="{ open: false }" class="lg:hidden">
   <nav
     id="nav-screen"
-    class="fixed z-40 w-screen inset-0 max-w-none h-full overflow-y-auto overflow-x-hidden bg-white pt-10 transition touch-none"
+    class="fixed inset-0 z-40 h-full w-screen max-w-none touch-none overflow-y-auto overflow-x-hidden bg-white pt-10 transition"
     x-show="open"
     x-transition
     x-transition:enter.duration.200ms
@@ -36,7 +36,7 @@
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
       <a
-        class="block text-2xl text-center mb-8"
+        class="mb-8 block text-center text-2xl"
         href="{{ .URL }}"
         title="{{ .Title }}"
         >{{ .Name }}</a
@@ -44,25 +44,25 @@
     {{ end }}
 
 
-    <div class="w-full flex space-x-4 justify-center">
+    <div class="flex w-full justify-center space-x-4">
       <a
         href="https://www.facebook.com/CatteryHamana"
         target="_blank"
-        class="p-4 h-16 w-16 text-stone-800"
+        class="h-16 w-16 p-4 text-stone-800"
         >{{- partial "facebook-logo" . -}}</a
       >
 
       <a
         href="https://instagram.com/attack.of.the.fluff"
         target="_blank"
-        class="p-4 h-16 w-16 text-stone-800"
+        class="h-16 w-16 p-4 text-stone-800"
         >{{- partial "instagram-logo" . -}}</a
       >
     </div>
   </nav>
 
   <div
-    class="fixed z-50 top-2 right-2 p-6 cursor-pointer rounded-lg backdrop-blur-md bg-white/25"
+    class="fixed right-2 top-2 z-50 cursor-pointer rounded-lg bg-white/25 p-6 backdrop-blur-md"
     @click="open = !open"
   >
     <div class="tham tham-e-slider tham-w-8" :class="open && 'tham-active'">
