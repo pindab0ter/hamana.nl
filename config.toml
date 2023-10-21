@@ -50,3 +50,10 @@ bgColor = '#ffffff'
 hint = 'photo'
 quality = 75
 resampleFilter = 'Box'
+
+# Umami configuration
+# https://umami.is/docs/install
+[Params.umami]
+enabled = true
+websiteId = "68ed8331-06a9-46d4-98a0-2657894eb8af"
+jsLocation = "https://analytics.umami.is/script.js"
