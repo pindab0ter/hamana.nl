@@ -1,14 +1,11 @@
 ---
-
 title: "Gabble Cats’ Yuki"
 description: "Seal Tabby Mitted Ragdoll"
 date: 2021-03-29
 resources:
-
-- name: "photo"
-  title: "Yuki"
-  src: "yuki-carried-over-shoulder.jpg"
-
+  - name: "photo"
+    title: "Yuki"
+    src: "yuki-carried-over-shoulder.jpg"
 ---
 
 Yuki is liever lui dan moe.
