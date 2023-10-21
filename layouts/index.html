@@ -2,7 +2,7 @@
   {{ .Content }}
   <article class="-mb-1 flex justify-center bg-beige pb-1">
     <div class="max-w-screen-xl lg:mb-24">
-      {{ with (resources.GetMatch "photos/yuki-basking-bed-ginny-washing-in-bg.jpg").Process "webp" }}
+      {{ with (resources.Get "photos/yuki-basking-bed-ginny-washing-in-bg.jpg").Process "webp" }}
         <img
           src="{{ .RelPermalink }}"
           alt="Yuki basking in the sun on bed"
@@ -36,7 +36,7 @@
         </div>
 
         <div class="hidden content-center bg-white lg:flex">
-          {{ with (resources.GetMatch "logo-text.png").Process "webp drawing" }}
+          {{ with (resources.Get "logo-text.png").Process "webp drawing" }}
             <img
               src="{{ .RelPermalink }}"
               alt="Cattery Hamana"
@@ -49,7 +49,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3">
         <div
           class="bg-[position-x:40%] aspect-video bg-cover bg-right lg:aspect-square"
-          {{ with (resources.GetMatch "photos/yuki-ginny-balcony.png").Process "webp" }}
+          {{ with (resources.Get "photos/yuki-ginny-balcony.png").Process "webp" }}
             style="background-image: url('{{ .RelPermalink }}');
             background-position-x: 40%;"
           {{ end }}
@@ -67,7 +67,7 @@
 
         <div
           class="aspect-video bg-cover lg:aspect-square"
-          {{ with (resources.GetMatch "photos/ginny-kitten.jpg").Process "webp" }}
+          {{ with (resources.Get "photos/ginny-kitten.jpg").Process "webp" }}
             style="background-image: url('{{ .RelPermalink }}');"
           {{ end }}
         >
@@ -84,7 +84,7 @@
 
         <div
           class="aspect-video bg-cover bg-[center_top_50%] lg:aspect-square"
-          {{ with (resources.GetMatch "photos/yuki-ginny-together-on-bed.jpg").Process "webp" }}
+          {{ with (resources.Get "photos/yuki-ginny-together-on-bed.jpg").Process "webp" }}
             style="background-image: url('{{ .RelPermalink }}');"
           {{ end }}
         >

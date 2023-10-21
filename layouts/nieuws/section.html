@@ -9,7 +9,7 @@
         {{ range .Paginator.Pages }}
 
           <div class="bg-white lg:hidden">
-            {{ with .Resources.GetMatch "photo" }}
+            {{ with .Resources.Get "photo" }}
               <img
                 src="{{ (.Process "webp").RelPermalink }}"
                 alt="{{ .Title }}"
@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            {{ with .Resources.GetMatch "photo" }}
+            {{ with .Resources.Get "photo" }}
               <img
                 src="{{ .RelPermalink }}"
                 alt="{{ .Title }}"

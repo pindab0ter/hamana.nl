@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 bg-white lg:grid-cols-2">
   {{ if .showPictureMobile }}
-    {{ with (resources.GetMatch "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp drawing" }}
+    {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
       <div class="mb-16 mt-8 flex content-center bg-white lg:hidden">
         <img
           src="{{ .RelPermalink }}"
@@ -87,7 +87,7 @@
   </div>
 
   <div class="hidden content-center bg-white lg:flex">
-    {{ with (resources.GetMatch "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp drawing" }}
+    {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
       <img
         src="{{ .RelPermalink }}"
         alt="Yuki and Ginny looking outside from the balcony together"
