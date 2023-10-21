@@ -1,17 +1,21 @@
 <div class="bg-beige">
   <div class="lg:grid lg:grid-cols-2 max-w-screen-xl mx-auto">
-    <img src="{{ ($.Page.Resources.GetMatch "photo").RelPermalink }}"
-         alt="{{ ($.Page.Resources.GetMatch "photo").Title }}"
-         class="lg:hidden w-full aspect-[21/9] object-cover"
-         style="{{ .Get "imageStyle" }}">
+    <img
+      src="{{ ($.Page.Resources.GetMatch "photo").RelPermalink }}"
+      alt="{{ ($.Page.Resources.GetMatch "photo").Title }}"
+      class="lg:hidden w-full aspect-[21/9] object-cover"
+      style="{{ .Get "imageStyle" }}"
+    />
 
     <div class="grid place-content-center lg:px-16">
       {{ .Inner }}
     </div>
 
-    <img src="{{ ($.Page.Resources.GetMatch "photo").RelPermalink }}"
-         alt="{{ ($.Page.Resources.GetMatch "photo").Title }}"
-         class="hidden lg:block w-full aspect-[16/9] object-cover"
-         style="{{ .Get "imageStyle" }}">
+    <img
+      src="{{ ($.Page.Resources.GetMatch "photo").RelPermalink }}"
+      alt="{{ ($.Page.Resources.GetMatch "photo").Title }}"
+      class="hidden lg:block w-full aspect-[16/9] object-cover"
+      style="{{ .Get "imageStyle" }}"
+    />
   </div>
 </div>

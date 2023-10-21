@@ -1,24 +1,27 @@
 {{ define "main" }}
-<main>
-  {{ .Content }}
+  <main>
+    {{ .Content }}
 
-  {{ range .Paginator.Pages }}
-  <div class="flex justify-center">
-    <div class="flex flex-col">
-      {{ with .Resources.GetMatch "photo" }}
-      <img src="{{ .RelPermalink }}"
-           alt="{{ .Title }}"
-           class="lg:max-w-lg w-full h-full object-cover mt-16 mb-8 mx-auto"/>
-      {{ end }}
+    {{ range .Paginator.Pages }}
+      <div class="flex justify-center">
+        <div class="flex flex-col">
+          {{ with .Resources.GetMatch "photo" }}
+            <img
+              src="{{ .RelPermalink }}"
+              alt="{{ .Title }}"
+              class="lg:max-w-lg w-full h-full object-cover mt-16 mb-8 mx-auto"
+            />
+          {{ end }}
 
-      <p class="text-center text-lg font-serif mb-6">
-        {{ .Date | time.Format ":date_long" }}
-      </p>
-      <div class="text-center">
-        {{ .Content }}
+
+          <p class="text-center text-lg font-serif mb-6">
+            {{ .Date | time.Format ":date_long" }}
+          </p>
+          <div class="text-center">
+            {{ .Content }}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  {{ end }}
-</main>
+    {{ end }}
+  </main>
 {{ end }}

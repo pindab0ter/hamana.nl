@@ -1,57 +1,66 @@
 {{ define "main" }}
-<main class="bg-beige lg:pb-16">
-  <div class="text-white flex w-full aspect-square lg:aspect-auto h-48">
-    <div class="absolute aspect-auto w-full h-48">
-      <img src="/photos/yuki-ginny-close-up.webp"
-        alt="Yuki and Ginny close up"
-        class="h-full w-full object-cover z-0"/>
+  <main class="bg-beige lg:pb-16">
+    <div class="text-white flex w-full aspect-square lg:aspect-auto h-48">
+      <div class="absolute aspect-auto w-full h-48">
+        <img
+          src="/photos/yuki-ginny-close-up.webp"
+          alt="Yuki and Ginny close up"
+          class="h-full w-full object-cover z-0"
+        />
+      </div>
+      <div
+        class="z-10 w-full h-full grid place-content-center text-center bg-stone-800/25 backdrop-blur-xs"
+      >
+        <h1 class="text-white">Onze poezen</h1>
+
+        <p class="text-white">Lief, leuk en een tikkeltje gestoord</p>
+      </div>
     </div>
-    <div class="z-10 w-full h-full grid place-content-center text-center bg-stone-800/25 backdrop-blur-xs">
-      <h1 class="text-white">
-        Onze poezen
-      </h1>
 
-      <p class="text-white">
-        Lief, leuk en een tikkeltje gestoord
-      </p>
-    </div>
-  </div>
-
-  <div class="pt-16 bg-white lg:bg-inherit flex justify-center">
-    <div class="lg:grid lg:grid-cols-2 max-w-screen-xl">
-    {{ range sort .Paginator.Pages.Reverse }}
-        <div class="lg:hidden">
-          {{ with .Resources.GetMatch "photo" }}
-          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
-          {{ end }}
-          <div class="py-14">
-            <h2 class="text-center mt-0">{{ .Title }}</h2>
-            <p class="text-center text-lg font-serif mb-4">
-              {{ .Description }}</br>
-              {{ .Date | time.Format ":date_short" }}
-            </p>
-            <div class="px-6 text-center">{{ .Content }}</div>
-          </div>
-        </div>
-
-        <div class="hidden lg:block bg-white h-full mx-8 mb-10">
-          <div>
+    <div class="pt-16 bg-white lg:bg-inherit flex justify-center">
+      <div class="lg:grid lg:grid-cols-2 max-w-screen-xl">
+        {{ range sort .Paginator.Pages.Reverse }}
+          <div class="lg:hidden">
             {{ with .Resources.GetMatch "photo" }}
-            <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="h-fit w-full aspect-square object-cover" />
+              <img
+                src="{{ .RelPermalink }}"
+                alt="{{ .Title }}"
+                class="h-fit w-full aspect-square object-cover"
+              />
             {{ end }}
-          </div>
-          <div class="px-8">
-            <div>
-              <h2>{{ .Title }}</h2>
-              <p class="text-lg font-serif mb-4">
-                {{ .Description }}</br>
+            <div class="py-14">
+              <h2 class="text-center mt-0">{{ .Title }}</h2>
+              <p class="text-center text-lg font-serif mb-4">
+                {{ .Description }}<br />
                 {{ .Date | time.Format ":date_short" }}
               </p>
-              <div>{{ .Content }}</div>
+              <div class="px-6 text-center">{{ .Content }}</div>
             </div>
           </div>
-        </div>
-    {{ end }}
-  </div>
-</main>
+
+          <div class="hidden lg:block bg-white h-full mx-8 mb-10">
+            <div>
+              {{ with .Resources.GetMatch "photo" }}
+                <img
+                  src="{{ .RelPermalink }}"
+                  alt="{{ .Title }}"
+                  class="h-fit w-full aspect-square object-cover"
+                />
+              {{ end }}
+            </div>
+            <div class="px-8">
+              <div>
+                <h2>{{ .Title }}</h2>
+                <p class="text-lg font-serif mb-4">
+                  {{ .Description }}<br />
+                  {{ .Date | time.Format ":date_short" }}
+                </p>
+                <div>{{ .Content }}</div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </main>
 {{ end }}

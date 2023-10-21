@@ -1,12 +1,20 @@
 <footer class="flex-column">
   <div class="flex justify-center bg-white py-4">
     <div class="mx-2 w-6 h-6">
-      <a href="https://www.facebook.com/CatteryHamana" target="_blank" class="text-stone-700">
+      <a
+        href="https://www.facebook.com/CatteryHamana"
+        target="_blank"
+        class="text-stone-700"
+      >
         {{- partial "facebook-logo" . -}}
       </a>
     </div>
     <div class="mx-2 w-6 h-6">
-      <a href="https://instagram.com/attack.of.the.fluff" target="_blank" class="text-stone-700">
+      <a
+        href="https://instagram.com/attack.of.the.fluff"
+        target="_blank"
+        class="text-stone-700"
+      >
         {{- partial "instagram-logo" . -}}
       </a>
     </div>
@@ -14,10 +22,19 @@
   <div class="bg-beige text-center text-sm text-stone-400 py-2">
     <p class="my-2">
       &copy;
-      <a href="https://www.linkedin.com/in/hansvanluttikhuizen/" target="_blank">Hans van Luttikhuizen-Ross</a>
-      | <a href="https://github.com/pindab0ter/Hamana/" target="_blank">Source</a>
+      <a href="https://www.linkedin.com/in/hansvanluttikhuizen/" target="_blank"
+        >Hans van Luttikhuizen-Ross</a
+      >
+      |
+      <a href="https://github.com/pindab0ter/Hamana/" target="_blank">Source</a>
       {{ if .Site.Params.umami.enabled }}
-      | Privacy friendly analytics with <a href="https://umami.is" target="_blank" class="underline hover:text-accent-light-400 hover:dark:text-accent-dark-500">umami</a>.
+        | Privacy friendly analytics with
+        <a
+          href="https://umami.is"
+          target="_blank"
+          class="underline hover:text-accent-light-400 hover:dark:text-accent-dark-500"
+          >umami</a
+        >.
       {{ end }}
     </p>
   </div>

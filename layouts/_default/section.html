@@ -1,21 +1,21 @@
 {{ define "main" }}
-<main>
-  <div>
-    {{ .Content }}
-  </div>
+  <main>
+    <div>
+      {{ .Content }}
+    </div>
 
-  <div>
-    {{ range .Paginator.Pages }}
+    <div>
+      {{ range .Paginator.Pages }}
 
-    {{ with .Resources.GetMatch "photo" }}
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
-    {{ end }}
+        {{ with .Resources.GetMatch "photo" }}
+          <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+        {{ end }}
 
-    <h2>{{ .Title }}</h2>
-    <p>{{ .Date | time.Format ":date_long" }}</p>
-    <p>{{ .Content }}</p>
 
-    {{ end }}
-  </div>
-</main>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Date | time.Format ":date_long" }}</p>
+        <p>{{ .Content }}</p>
+      {{ end }}
+    </div>
+  </main>
 {{ end }}
