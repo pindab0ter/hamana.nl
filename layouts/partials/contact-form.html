@@ -2,9 +2,9 @@
   {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
     <div class="mb-16 mt-8 flex content-center bg-white lg:hidden">
       <img
+        class="w-100 aspect-[16/9] object-cover"
         src="{{ .RelPermalink }}"
         alt="Yuki and Ginny looking outside from the balcony together"
-        class="w-100 aspect-[16/9] object-cover"
         style="object-position: 100% 30%"
       />
     </div>
@@ -16,20 +16,20 @@
     <div class="flex justify-center">
       <div class="mx-2 h-5 w-5">
         <a
+          class="text-stone-700"
           href="https://www.facebook.com/CatteryHamana"
           target="_blank"
           aria-label="Cattery Hamana Facebook"
-          class="text-stone-700"
         >
           {{- partial "facebook-logo" . -}}
         </a>
       </div>
       <div class="mx-2 h-5 w-5">
         <a
+          class="text-stone-700"
           href="https://instagram.com/attack.of.the.fluff"
           target="_blank"
           aria-label="Cattery Hamana Instagram"
-          class="text-stone-700"
         >
           {{- partial "instagram-logo" . -}}
         </a>
@@ -37,42 +37,42 @@
     </div>
 
     <form
+      class="mt-16 flex flex-col"
       method="post"
       action="https://forms.un-static.com/forms/1b7b3742d437de093ac5c3507131de88ae85602d"
-      class="mt-16 flex flex-col"
     >
       <input
+        class="mx-2 mb-2 border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         type="text"
         name="Naam"
         placeholder="Vul je naam in"
-        class="mx-2 mb-2 border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         required
       />
       <input
+        class="mx-2 mb-2 border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         type="email"
         name="Email"
         placeholder="Vul je e-mailadres in"
-        class="mx-2 mb-2 border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         required
       />
       <input
+        class="mx-2 mb-2 border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         type="text"
         name="Onderwerp"
         placeholder="Vul het onderwerp in"
-        class="mx-2 mb-2 border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         required
       />
       <textarea
+        class="mx-2 mb-2 resize-none border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
         name="Bericht"
         cols="40"
         rows="5"
         placeholder="Typ hier je bericht…"
-        class="mx-2 mb-2 resize-none border border-white border-b-stone-800 px-2 py-4 hover:border-stone-800"
       ></textarea>
       <div class="text-center">
         <button
-          type="submit"
           class="my-4 whitespace-nowrap rounded-full bg-orange px-6 py-4 font-light text-white transition hover:bg-orange/75"
+          type="submit"
         >
           Verstuur
         </button>
@@ -83,9 +83,9 @@
   <div class="hidden content-center bg-white lg:flex">
     {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "resize 640x fit webp" }}
       <img
+        class="object-cover"
         src="{{ .RelPermalink }}"
         alt="Yuki and Ginny looking outside from the balcony together"
-        class="object-cover"
       />
     {{ end }}
   </div>

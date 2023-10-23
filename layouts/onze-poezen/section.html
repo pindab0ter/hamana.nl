@@ -4,9 +4,9 @@
       <div class="absolute aspect-auto h-48 w-full">
         {{ with (resources.Get "photos/yuki-ginny-close-up.jpg").Process "resize 1024x webp" }}
           <img
+            class="z-0 h-full w-full object-cover"
             src="{{ .RelPermalink }}"
             alt="Yuki and Ginny close up"
-            class="z-0 h-full w-full object-cover"
           />
         {{ end }}
       </div>
@@ -26,9 +26,9 @@
           <div class="lg:hidden">
             {{ with (.Resources.Get "photo").Process "resize 576x webp" }}
               <img
+                class="aspect-square h-fit w-full object-cover"
                 src="{{ .RelPermalink }}"
                 alt="{{ .Title }}"
-                class="aspect-square h-fit w-full object-cover"
               />
             {{ end }}
             <div class="py-14">
@@ -45,9 +45,9 @@
             <div>
               {{ with (.Resources.Get "photo").Process "resize 576x webp" }}
                 <img
+                  class="aspect-square h-fit w-full object-cover"
                   src="{{ .RelPermalink }}"
                   alt="{{ .Title }}"
-                  class="aspect-square h-fit w-full object-cover"
                 />
               {{ end }}
             </div>

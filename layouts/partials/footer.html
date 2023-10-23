@@ -2,20 +2,20 @@
   <div class="flex justify-center bg-white py-4">
     <div class="mx-2 h-6 w-6">
       <a
+        class="text-stone-700"
         href="https://www.facebook.com/CatteryHamana"
         target="_blank"
         aria-label="Cattery Hamana Facebook"
-        class="text-stone-700"
       >
         {{- partial "facebook-logo" . -}}
       </a>
     </div>
     <div class="mx-2 h-6 w-6">
       <a
+        class="text-stone-700"
         href="https://instagram.com/attack.of.the.fluff"
         target="_blank"
         aria-label="Cattery Hamana instagram"
-        class="text-stone-700"
       >
         {{- partial "instagram-logo" . -}}
       </a>
@@ -34,9 +34,9 @@
       {{ if .Site.Params.umami.enabled }}
         | Privacy-vriendelijke analytics met
         <a
+          class="hover:text-accent-light-400 hover:dark:text-accent-dark-500 underline"
           href="https://umami.is"
           target="_blank"
-          class="hover:text-accent-light-400 hover:dark:text-accent-dark-500 underline"
           >umami</a
         >.
       {{ end }}

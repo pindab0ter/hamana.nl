@@ -4,9 +4,9 @@
     <div class="max-w-screen-xl lg:mb-24">
       {{ with (resources.Get "photos/yuki-basking-bed-ginny-washing-in-bg.jpg").Process "webp" }}
         <img
+          class="aspect-video w-full object-cover object-top lg:aspect-[21/9]"
           src="{{ .RelPermalink }}"
           alt="Yuki basking in the sun on bed"
-          class="aspect-video w-full object-cover object-top lg:aspect-[21/9]"
           style="object-position: 100% 7%"
         />
       {{ end }}
@@ -22,14 +22,14 @@
 
           <div class="-ml-4 mt-16 flex flex-wrap">
             <a
-              href="/nieuws"
               class="m-2 whitespace-nowrap rounded-full bg-orange px-4 py-3 font-light text-white transition hover:bg-orange/75"
+              href="/nieuws"
               >Het laatste nieuws</a
             >
 
             <a
-              href="/kittens/"
               class="m-2 rounded-full border border-orange px-4 py-3 font-light text-orange transition hover:bg-orange hover:text-white"
+              href="/kittens/"
               >Kittens</a
             >
           </div>
@@ -38,9 +38,9 @@
         <div class="hidden content-center bg-white lg:flex">
           {{ with (resources.Get "logo-text.png").Process "webp drawing" }}
             <img
+              class="object-contain"
               src="{{ .RelPermalink }}"
               alt="Cattery Hamana"
-              class="object-contain"
             />
           {{ end }}
         </div>
@@ -58,8 +58,8 @@
             class="grid h-full w-full place-content-center bg-orange/75 backdrop-blur-xs"
           >
             <a
-              href="/faq/"
               class="rounded-full border-2 border-white px-4 py-2 font-light text-white transition hover:bg-white hover:text-current"
+              href="/faq/"
               >Veelgestelde vragen</a
             >
           </div>
@@ -75,8 +75,8 @@
             class="grid h-full w-full place-content-center bg-orange/75 backdrop-blur-xs"
           >
             <a
-              href="/kittens/"
               class="rounded-full border-2 border-white px-4 py-2 font-light text-white transition hover:bg-white hover:text-current"
+              href="/kittens/"
               >Kittens</a
             >
           </div>
@@ -92,8 +92,8 @@
             class="grid h-full w-full place-content-center bg-orange/75 backdrop-blur-xs"
           >
             <a
-              href="/onze-poezen/"
               class="rounded-full border-2 border-white px-4 py-2 font-light text-white transition hover:bg-white hover:text-current"
+              href="/onze-poezen/"
               >Onze poezen</a
             >
           </div>

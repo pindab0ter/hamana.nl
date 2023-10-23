@@ -4,9 +4,9 @@
       <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
         {{ with (resources.Get "photos/avatar-kitten-portret.jpg").Process "resize 640x webp" }}
           <img
+            class="aspect-[21/9] w-full object-cover lg:hidden"
             src="{{ .RelPermalink }}"
             alt="Jonge Ginny"
-            class="aspect-[21/9] w-full object-cover lg:hidden"
             style="object-position: 100% 28%"
           />
 
@@ -15,9 +15,9 @@
           </div>
 
           <img
+            class="hidden aspect-[16/9] w-full object-cover lg:block"
             src="{{ .RelPermalink }}"
             alt="Jonge Ginny"
-            class="hidden aspect-[16/9] w-full object-cover lg:block"
             style="object-position: 100% 24%"
           />
         {{ end }}

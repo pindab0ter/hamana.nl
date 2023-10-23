@@ -8,26 +8,26 @@
 
 
   <a
+    class="mx-2 h-5 w-5 text-stone-800"
     href="https://www.facebook.com/CatteryHamana"
     target="_blank"
     aria-label="Cattery Hamana Facebook"
-    class="mx-2 h-5 w-5 text-stone-800"
     >{{- partial "facebook-logo" . -}}</a
   >
 
   <a
+    class="mx-2 h-5 w-5 text-stone-800"
     href="https://instagram.com/attack.of.the.fluff"
     target="_blank"
-    class="mx-2 h-5 w-5 text-stone-800"
     aria-label="Cattery Hamana Instagram"
     >{{- partial "instagram-logo" . -}}</a
   >
 </nav>
 
-<div x-data="{ open: false }" class="lg:hidden">
+<div class="lg:hidden" x-data="{ open: false }">
   <nav
-    id="nav-screen"
     class="fixed inset-0 z-40 h-full w-screen max-w-none touch-none overflow-y-auto overflow-x-hidden bg-white pt-10 transition"
+    id="nav-screen"
     x-show="open"
     x-transition
     x-transition:enter.duration.200ms
@@ -48,16 +48,16 @@
 
     <div class="flex w-full justify-center space-x-4">
       <a
+        class="h-16 w-16 p-4 text-stone-800"
         href="https://www.facebook.com/CatteryHamana"
         target="_blank"
-        class="h-16 w-16 p-4 text-stone-800"
         >{{- partial "facebook-logo" . -}}</a
       >
 
       <a
+        class="h-16 w-16 p-4 text-stone-800"
         href="https://instagram.com/attack.of.the.fluff"
         target="_blank"
-        class="h-16 w-16 p-4 text-stone-800"
         >{{- partial "instagram-logo" . -}}</a
       >
     </div>
