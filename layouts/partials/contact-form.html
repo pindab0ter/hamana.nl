@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 bg-white lg:grid-cols-2">
   {{ with (resources.Get "photos/yuki-ginny-balcony-looking-outside-together.jpg").Process "webp" }}
-    <div class="mb-16 mt-8 flex content-center bg-white lg:hidden">
+    <div class="mt-0 lg:mt-8 flex content-center bg-white lg:hidden">
       <img
         class="w-100 aspect-[16/9] object-cover"
         src="{{ .RelPermalink }}"
@@ -11,7 +11,7 @@
   {{ end }}
 
 
-  <div class=" pb-24 lg:px-10 lg:px-20">
+  <div class="py-24 lg:px-10 grid place-items-center">
     <h1 class="mt-0 text-center">Contact</h1>
     <div class="flex justify-center">
       <div class="mx-2 h-5 w-5">
