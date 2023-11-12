@@ -1,0 +1,128 @@
+{{ define "main" }}
+  <main>
+    <!-- Header block -->
+    <div class="bg-beige">
+      <div class="mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
+        {{ with (resources.Get "photos/avatar-kittens-group.jpg").Process "resize 640x webp" }}
+          <img
+            class="aspect-[21/9] w-full object-cover lg:hidden"
+            src="{{ .RelPermalink }}"
+            alt="De Avatarkittens"
+          />
+
+          <div class="grid place-content-center lg:px-16">
+            <div class="py-20 lg:text-center">
+              <h1 class="mt-0">De kittens van Hamana</h1>
+              <p class="font-serif">Gefokt met liefde en kennis</p>
+
+              <div class="block">
+                <a
+                  class="whitespace-nowrap rounded-full bg-orange px-4 py-3 font-light text-white transition hover:bg-orange/75"
+                  href="/nieuws"
+                >
+                  Het laatste nieuws
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <img
+            class="hidden w-full object-cover lg:block"
+            src="{{ .RelPermalink }}"
+            alt="De Avatarkittensk"
+          />
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Litter -->
+    {{ range .Paginator.Pages }}
+      <!-- Parents block < lg -->
+      <div class="bg-white lg:hidden">
+        {{ with .Resources.Get "parents" }}
+          <img
+            class="h-full w-full object-cover"
+            src="{{ (.Process "resize 576x webp").RelPermalink }}"
+            alt="{{ .Title }}"
+          />
+        {{ end }}
+        <div class="py-14">
+          <h2 class="mt-0 text-center">{{ .Title }}</h2>
+          <div class="px-6 text-center">{{ .Content }}</div>
+        </div>
+      </div>
+
+      <!-- Parents block >= lg -->
+      <div class="container py-24 hidden grid-cols-2 last:mb-0 lg:grid">
+        {{ with .Resources.Get "parents" }}
+          <img
+            class="h-full w-full object-cover"
+            src="{{ (.Process "resize 576x webp").RelPermalink }}"
+            alt="{{ .Title }}"
+          />
+        {{ end }}
+
+
+        <div class="grid content-center px-8">
+          <div>
+            <h2 class="mt-8">
+              {{ .Title }}
+            </h2>
+
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Kittens block -->
+      <div class="bg-beige py-24">
+        <div class="flex justify-center container">
+          <div class="flex flex-col">
+            {{ with .Resources.Get "logo" }}
+              <img
+                class="mx-auto w-full object-cover"
+                src="{{ (.Process "resize 1024x webp drawing").RelPermalink }}"
+                alt="{{ .Title }}"
+              />
+            {{ end }}
+
+
+            <h3 class="my-12 text-center">
+              Geboren op
+              {{ .Date | time.Format ":date_long" }}
+            </h3>
+          </div>
+        </div>
+
+        <!-- Kittens grid -->
+        <div
+          class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 container"
+        >
+          {{ range sort (where .Resources "Params.type" "kitten") "Params.order" }}
+            <div class="bg-white">
+              <img
+                class="aspect-[3/4] w-full object-cover"
+                src="{{ (.Process "resize 320x webp photo").RelPermalink }}"
+                alt="{{ .Title }}"
+              />
+
+              <div class="text-center">
+                <h3 class="my-8">{{ .Title }}</h3>
+                <p class="mb-0">
+                  Geslacht: {{ cond (eq .Params.gender "m") "Kater" "Poes" }}<br />
+                </p>
+                <p>
+                  Kleur:
+                  <span class="whitespace-nowrap">
+                    {{ .Params.color }}
+                  </span>
+                </p>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+  </main>
+{{ end }}
