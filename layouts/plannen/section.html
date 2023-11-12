@@ -1,0 +1,52 @@
+{{ define "main" }}
+  <main class="flex justify-center lg:pb-8">
+    <div class="max-w-screen-xl">
+      <div class="pb-12 pt-4 text-center">
+        <h1>{{ .Title }}</h1>
+      </div>
+
+      <div class="max-w-screen-xl">
+        {{ range .Paginator.Pages }}
+          <div class="bg-white lg:hidden">
+            {{ with .Resources.Get "photo" }}
+              <img
+                class="h-full w-full object-cover"
+                src="{{ (.Process "resize 576x webp").RelPermalink }}"
+                alt="{{ .Title }}"
+              />
+            {{ end }}
+            <div class="py-14">
+              <h2 class="mt-4 text-center">{{ .Title }}</h2>
+              <div class="px-6 text-center">{{ .Content }}</div>
+            </div>
+          </div>
+
+          <div
+            class="mx-16 mb-10 hidden grid-cols-2 last:mb-0 lg:grid bg-beige"
+          >
+            {{ with .Resources.Get "photo" }}
+              <img
+                class="h-full w-full object-cover"
+                src="{{ (.Process "resize 576x webp").RelPermalink }}"
+                alt="{{ .Title }}"
+              />
+            {{ end }}
+
+
+            <div class="grid content-center px-8">
+              <div>
+                <h2 class="text-center">
+                  {{ .Title }}
+                </h2>
+
+                <div class="text-center">
+                  {{ .Content }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </main>
+{{ end }}
