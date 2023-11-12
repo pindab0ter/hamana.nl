@@ -14,7 +14,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="p-12 lg:px-24 lg:px-36 lg:py-48">
-          <h1 class="mb-8 text-start">Over ons</h1>
+          <h1 class="mb-8 mt-0 text-start">Over ons</h1>
           <p>
             Kleinschalige Ragdoll & Noorse Boskat-cattery in Arnhem die zich
             inzet voor het fokken van sociale en gezonde kittens.
@@ -76,7 +76,7 @@
 
         <div
           class="aspect-video bg-cover lg:aspect-square"
-          {{ with (resources.Get "photos/ginny-kitten.jpg").Process "resize 427x webp" }}
+          {{ with (resources.Get "photos/avatar-kittens-fighting.jpg").Process "resize 427x webp" }}
             style="background-image: url('{{ .RelPermalink }}');"
           {{ end }}
         >
