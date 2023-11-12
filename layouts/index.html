@@ -33,6 +33,15 @@
               >Kittens</a
             >
           </div>
+
+          {{ with (resources.Get "educats.be.png").Process "webp drawing" }}
+            <img
+              class="-ml-8 mt-12"
+              src="{{ .RelPermalink }}"
+              alt="Cattery Hamana"
+              style="max-width: 220px"
+            />
+          {{ end }}
         </div>
 
         <div class="hidden content-center bg-white lg:flex">
